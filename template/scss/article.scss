@@ -1,0 +1,100 @@
+$pink: #e32636;
+$paleGrey: #9c9c9c;
+$midGrey: #363636;
+$darkGrey: #1c1c1c;
+.catalog{
+  background-color: #ffff;
+  font-family: 'Scada', sans-serif;
+  .article{
+    padding: 5em 0;
+    &-out{
+      display: grid;
+      grid-template-columns: 20% 50% 30%;
+      padding-bottom: 1.625em;
+      &:not(:first-child){
+        border-top: 2px solid $paleGrey;
+        padding-top: 1.625em;
+      }
+      .article-description{
+        .title{
+          font-weight: 700;
+          font-size: 1.375em;
+        }
+        p{
+          font-size: .875em;
+          color: $paleGrey;
+          font-weight: 400;
+        }
+      }
+      .price-buy{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        .price{
+          font-size: 2.5em;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+        .available{
+          font-size: 1.375em;
+          font-weight: 700;
+        }
+        .wrap_btn{
+          width: 75%;
+          button{
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            &:nth-child(1){
+              font-weight: 400;
+              font-size: .875em;
+              border: 2px solid $pink;
+              background: none;
+              display: flex;
+              justify-content: center;
+              padding: .5em 0;
+              height: 2.125rem;
+              box-sizing: border-box;
+              margin-bottom: 3%;
+              img{
+                width: 10%;
+                padding-left: 5%;
+              }
+            }
+            &:nth-child(2){
+              font-weight: 700;
+              font-size: .875em;
+              background-color: $pink;
+              padding: .5em 0;
+              color: #fff;
+              height: 2.3125rem;
+              box-sizing: border-box;
+            }
+          }
+        }
+      }
+    }
+  }
+  .pagi-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5%;
+    .pagination {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 10%;
+      li{
+        a{
+          text-decoration: none;
+          color: #000;
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+}

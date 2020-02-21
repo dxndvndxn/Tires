@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="55f0cbf7-9f18-473b-b5a8-4f825b3e4cd7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Tires.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Router.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/ContactsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/SiteController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/StorageController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/TireFitController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/desktop.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/ValuesForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/css/article.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/css/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/css/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/SonyRusbyme.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/SonyRusbyme.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/SonyRusbyme.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/fonts/SonyRusbyme.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/img/car-4048220.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/img/tireone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/js/easemove.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/js/one.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/js/scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/scss/article.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/scss/footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/scss/header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/scss/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/contacts/contacts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/layouts/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/layouts/forma.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/layouts/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/output/output.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pages/page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/site/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/storage/storage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/tirefit/tirefit.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1XOFGbUU2oxWMnt9yO7ur5Nooz5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FasPro" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Tires\model" />
+      <recent name="C:\xampp\htdocs\Tires\template" />
+      <recent name="C:\xampp\htdocs\Tires\config" />
+      <recent name="C:\xampp\htdocs\Tires\views\tirefit" />
+      <recent name="C:\xampp\htdocs\Tires\views\storage" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55f0cbf7-9f18-473b-b5a8-4f825b3e4cd7" name="Default Changelist" comment="" />
+      <created>1580909138171</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580909138171</updated>
+      <workItem from="1580909139353" duration="8511000" />
+      <workItem from="1580972105369" duration="28773000" />
+      <workItem from="1581056837307" duration="1319000" />
+      <workItem from="1581183671660" duration="4566000" />
+      <workItem from="1581196201294" duration="901000" />
+      <workItem from="1581238579976" duration="10692000" />
+      <workItem from="1581615084866" duration="15312000" />
+      <workItem from="1581635895741" duration="872000" />
+      <workItem from="1581662489174" duration="6070000" />
+      <workItem from="1581705473072" duration="2312000" />
+      <workItem from="1581762246933" duration="10272000" />
+      <workItem from="1581777155761" duration="24969000" />
+      <workItem from="1581849428374" duration="3640000" />
+      <workItem from="1581868240566" duration="4653000" />
+      <workItem from="1581919687815" duration="43864000" />
+      <workItem from="1582014254723" duration="38044000" />
+      <workItem from="1582108316102" duration="17326000" />
+      <workItem from="1582189180100" duration="28367000" />
+      <workItem from="1582265469761" duration="31117000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/template/js/one.js</url>
+          <line>73</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/model/ValuesForm.php</url>
+          <line>210</line>
+          <properties>
+            <option name="className" value="\ValuesForm" />
+            <option name="methodName" value="countTires" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
