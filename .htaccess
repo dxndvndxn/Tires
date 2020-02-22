@@ -1,29 +1,9 @@
-#AddDefaultCharset utf-8
-#AddType text/css .css
-#AddType text/javascript .js
-#RewriteEngine on
-#RewriteBase /
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteRule ^(.*)$ index.php
-#1.
 AddDefaultCharset utf-8
-AddType text/css .css
-AddType text/javascript .js
+
 RewriteEngine on
-RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-d
+
 RewriteRule ^(.*)$ index.php [L]
-#2.
-#RewriteRule ^(.*)$ index.php
-#3.
-#AddDefaultCharset cp-1251
-#ErrorDocument 404 /
-#RewriteEngine On
-#RewriteCond %{REQUEST_FILENAME} -s [OR]
-#RewriteCond %{REQUEST_FILENAME} -l [OR]
-#RewriteCond %{REQUEST_FILENAME} -d
-#RewriteRule ^.*$ - [L]
-#RewriteRule ^.*$ index.php [L]
+
+

@@ -195,16 +195,15 @@ WHERE available = 1 ORDER BY catalog_diskov.id DESC');
 //             array_push($lastList,array_slice($shuffList,0,10));
 //             array_splice($shuffList,0,10);
 //         }
+        $lastList = array_fill(0,1,'');
 
          for($k = 0; $k < count($commonList); $k++){
              array_push($lastList,array_slice($commonList,0,10));
              array_splice($commonList,0,10);
          }
          //Возвращаем массив , где в каждом ключе нужные данные для вывода на одну страницу
-        if($page = -1){
-            return $lastList[$page +2];
-        }
-        return $lastList[$page - 1];
+
+        return $lastList[$page];
 
     }
     //Получаем кол-во записей на главеую

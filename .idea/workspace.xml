@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f0cbf7-9f18-473b-b5a8-4f825b3e4cd7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/template/js/forma.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/scss/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/scss/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ValuesForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/ValuesForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/output/output.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/output/output.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/page.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/site/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FasPro" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tires" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -93,6 +89,9 @@
       <workItem from="1582108316102" duration="17326000" />
       <workItem from="1582189180100" duration="28367000" />
       <workItem from="1582265469761" duration="46854000" />
+      <workItem from="1582368391023" duration="4433000" />
+      <workItem from="1582372887823" duration="700000" />
+      <workItem from="1582373626372" duration="12535000" />
     </task>
     <servers />
   </component>
@@ -104,7 +103,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -120,7 +121,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/model/ValuesForm.php</url>
-          <line>210</line>
+          <line>209</line>
           <properties>
             <option name="className" value="\ValuesForm" />
             <option name="methodName" value="countTires" />
