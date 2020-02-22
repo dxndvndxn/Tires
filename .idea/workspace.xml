@@ -2,52 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f0cbf7-9f18-473b-b5a8-4f825b3e4cd7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Tires.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Router.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/ContactsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/SiteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/StorageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/TireFitController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/ValuesForm.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/css/article.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/css/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/css/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/fonts/SonyRusbyme.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/fonts/SonyRusbyme.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/fonts/SonyRusbyme.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/fonts/SonyRusbyme.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/img/car-4048220.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/img/tireone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/js/easemove.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/js/one.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/js/scroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/scss/article.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/scss/footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/scss/header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/scss/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/contacts/contacts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layouts/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layouts/forma.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layouts/header.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/output/output.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/site/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/storage/storage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/tirefit/tirefit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/js/forma.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/scss/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/scss/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/output/output.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/output/output.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/page.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/site/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +92,7 @@
       <workItem from="1582014254723" duration="38044000" />
       <workItem from="1582108316102" duration="17326000" />
       <workItem from="1582189180100" duration="28367000" />
-      <workItem from="1582265469761" duration="31117000" />
+      <workItem from="1582265469761" duration="46854000" />
     </task>
     <servers />
   </component>

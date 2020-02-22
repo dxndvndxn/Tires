@@ -20,7 +20,18 @@
         <div class="wrap-btns">
             <button id="in">Вход</button>
             <button id="up">Регистрация</button>
+            <div class="close">
+                <div></div>
+                <div></div>
+            </div>
         </div>
+        <form action="" method="post" id="up_in">
+            <input type="email" name="email" placeholder="Введите e-mail" class="signUp" id="email">
+            <input type="password" name="passreg" placeholder="Пароль" class="signUp">
+            <input type="text" name="login" placeholder="Логин" class="signIn">
+            <input type="password" name="passin" placeholder="Пароль" class="signIn">
+            <input type="submit" value="Вход" class="signIn signUp" disabled>
+        </form>
     </div>
     <div></div>
 </div>

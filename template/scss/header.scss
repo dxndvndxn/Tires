@@ -19,6 +19,9 @@ $darkGrey: #1c1c1c;
 .grid{
   @extend %repeat-grid;
 }
+.valid{
+  border: 1px solid green !important;
+}
 body{
   background-image: url("../img/car-4048220.jpg");
   background-repeat: no-repeat;
@@ -34,6 +37,7 @@ header{
   position: fixed;
   width: 100%;
   transition: all .5s ease;
+  z-index: 1;
   nav{
     display: flex;
     justify-content: space-between;
@@ -85,9 +89,11 @@ header{
   padding-top: 100px;
   .wrap{
     display: flex;
-    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
     margin-top: 3.125em;
     padding-right: 1em;
+    position: relative;
     &-btns{
       button{
         display: block;
@@ -98,10 +104,61 @@ header{
         text-align: right;
         padding: 0;
         font-weight: 700;
+        cursor: pointer;
+        outline: none;
         &:nth-child(1){
           color: $pink;
           width: 100%;
           margin-bottom: .625em;
+        }
+      }
+      .close{
+        height: 2em;
+        width: 2em;
+        position: absolute;
+        top: -66%;
+        right: 0.5%;
+        cursor: pointer;
+        display: none;
+        div{
+          border-radius: 5px;
+          background: #fff;
+          height: 12%;
+          width: 75%;
+          &:first-child{
+            transform: rotate(45deg);
+          }
+          &:last-child{
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+    form{
+      position: absolute;
+      top: 0;
+      input{
+        display: none;
+        background: none;
+        border: none;
+        appearance: none;
+        border-radius: 0;
+        font-size: 1.0625em;
+        font-weight: 700;
+        width: 12.5em;
+        height: 3.125em;
+        text-align: center;
+        margin-bottom: 3px;
+        outline: none;
+        box-sizing: border-box;
+        &:not(:last-child){
+          background: #fff;
+          color: $paleGrey;
+
+        }
+        &:last-child{
+          background-color: $pink;
+          color: #fff;
         }
       }
     }

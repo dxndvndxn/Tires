@@ -96,5 +96,6 @@
 <script src="../template/js/one.js"></script>
 <script src="../template/js/scroll.js"></script>
 <script src="../template/js/easemove.js"></script>
+<script src="../template/js/forma.js"></script>
 </body>
 </html>
