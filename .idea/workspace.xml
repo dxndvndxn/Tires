@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f0cbf7-9f18-473b-b5a8-4f825b3e4cd7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/CartController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/scss/cart.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/cart/cart.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layouts/pcncart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/js/cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/js/forma.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/forma.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/cart.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/js/one.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/one.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/scss/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/output/output.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/output/output.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/page.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/scss/cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/cart.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/cart/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cart/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/pcncart.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/pcncart.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +92,8 @@
       <workItem from="1582368391023" duration="4433000" />
       <workItem from="1582372887823" duration="700000" />
       <workItem from="1582373626372" duration="12535000" />
-      <workItem from="1582407485257" duration="11366000" />
+      <workItem from="1582407485257" duration="11845000" />
+      <workItem from="1582455936966" duration="36356000" />
     </task>
     <servers />
   </component>

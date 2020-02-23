@@ -119,7 +119,7 @@ document.querySelector('.labels').addEventListener('click', (e) => {
 let selectTires = document.querySelector('#search_tires').children;
 let selectDisks = document.querySelector('#search_disks .wrap').children;
 let selectDisk2 = document.querySelector('#search_disks .wrap:nth-child(2)').children;
-//Циклим селекты что убиралося атрибут required
+//Циклим селекты чтобы убирался атрибут required
 for(let i = 0; i <selectTires.length; i++){
     selectTires[i].setAttribute('required','');
     selectTires[i].addEventListener('change',()=>{

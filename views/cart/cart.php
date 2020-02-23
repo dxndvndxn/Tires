@@ -13,5 +13,6 @@
 <?php include_once('views/layouts/footer.php') ?>
 <script src="template/js/scroll.js"></script>
 <script src="template/js/forma.js"></script>
+<script src="template/js/cart.js"></script>
 </body>
 </html>
