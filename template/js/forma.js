@@ -4,7 +4,7 @@ let signUp = document.querySelector('#up');
 let forma = document.querySelector('#up_in');
 let close = document.querySelector('.close');
 let submt = document.querySelector("input[type='submit']");
-
+//По клику войти
 signIn.addEventListener('click',()=>{
     for(let i = 0; i < forma.children.length;i++){
         if(forma[i].classList.contains('signIn')){
@@ -16,6 +16,7 @@ signIn.addEventListener('click',()=>{
         }
     }
 });
+//По клику зарегаться
 signUp.addEventListener('click',()=>{
     for(let i = 0; i < forma.children.length;i++){
         if(forma[i].classList.contains('signUp')){
@@ -44,33 +45,30 @@ function isValid(id, pat) {
     }
 }
 //Валидация email
-$("#email").change( function(){
+$("#email").on('input', function(){
      let email = isValid("#email", '[a-zA-Zа-яА-ЯёЁ_\\d][-a-zA-Zа-яА-ЯёЁ0-9_\\.\\d]*\\@[a-zA-Zа-яА-ЯёЁ\\d][-a-zA-Zа-яА-ЯёЁ\\.\\d]*\\.[a-zA-Zа-яА-Я]{2,6}$');
     if(email){
+        if(passreg.value >= 8){
+            submt.removeAttribute('disabled');
+            passreg.style.border = '1px solid green';
+        }
         $("#email").addClass('valid');
     }else{
         $("#email").css({border:'1px solid red'});
         submt.setAttribute('disabled','');
     }
 });
+let passreg = document.querySelector('input[name=passreg]');
 //Валидация пароля
-$('input[name=passreg]').change(function() {
-     let pswd = $(this).val();
-    if (pswd.length < 8){
-        $('input[name=passreg]').css({border:'1px solid red'});
+passreg.oninput = function() {
+    if (this.value.length < 8) {
+        this.style.border = '1px solid red';
         submt.setAttribute('disabled','');
-    }else{
-        $('input[name=passreg]').addClass('valid');
+        this.focus();
+    } else {
+        if($("#email").hasClass('valid')) {
+            this.style.border = '1px solid green';
+            submt.removeAttribute('disabled');
+        }
     }
-});
-//Проверка на отправку формы
-$('input[name=passreg]').blur(function () {
-    if($('input[name=passreg]').hasClass('valid') && $("#email").hasClass('valid')){
-        submt.removeAttribute('disabled');
-    }
-});
-$("#email").blur(function () {
-    if($('input[name=passreg]').hasClass('valid') && $("#email").hasClass('valid')){
-        submt.removeAttribute('disabled');
-    }
-});
+};

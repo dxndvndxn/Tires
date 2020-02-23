@@ -94,7 +94,6 @@
 </div>
 
 <?php include_once('views/layouts/footer.php') ?>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="template/js/one.js"></script>
 <script src="template/js/scroll.js"></script>
 <script src="template/js/forma.js"></script>

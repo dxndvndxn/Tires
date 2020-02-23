@@ -103,6 +103,7 @@ document.querySelector('.labels').addEventListener('click', (e) => {
             labels[i].classList.remove('addBorder');
             labels[i].classList.add('nonBorder');
         }
+        //Меня значение атрибута у кнокпи в зависимости от нажатой вкладки
         if(e.target == labels[0]){
             btn.setAttribute('form','search_tire_by_car');
         }else if(e.target == labels[1]){
@@ -114,9 +115,11 @@ document.querySelector('.labels').addEventListener('click', (e) => {
         }
     }
 });
+//Выбираем селекты
 let selectTires = document.querySelector('#search_tires').children;
 let selectDisks = document.querySelector('#search_disks .wrap').children;
-
+let selectDisk2 = document.querySelector('#search_disks .wrap:nth-child(2)').children;
+//Циклим селекты что убиралося атрибут required
 for(let i = 0; i <selectTires.length; i++){
     selectTires[i].setAttribute('required','');
     selectTires[i].addEventListener('change',()=>{
@@ -126,12 +129,22 @@ for(let i = 0; i <selectTires.length; i++){
     });
 }
 for(let i = 0; i <selectDisks.length; i++){
-    if(selectDisks[i].hasAttribute('required')){
-        selectDisks[i].removeAttribute('required');
-    }else{
-        selectDisks[i].setAttribute('required','');
-    }
+    selectDisks[i].setAttribute('required','');
     selectDisks[i].addEventListener('change',()=>{
+        for(let a of selectDisks){
+            a.removeAttribute('required');
+        }
+        for(let a of selectDisk2){
+            a.removeAttribute('required');
+        }
+    });
+}
+for(let k = 0; k <selectDisk2.length; k++){
+    selectDisks[k].setAttribute('required','');
+    selectDisk2[k].addEventListener('change',()=>{
+        for(let a of selectDisk2){
+            a.removeAttribute('required');
+        }
         for(let a of selectDisks){
             a.removeAttribute('required');
         }

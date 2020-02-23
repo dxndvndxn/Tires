@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="template/css/index.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Scada:400,700,700i&display=swap&subset=cyrillic" rel="stylesheet">
-    <title>Главная</title>
+    <title>Магазин</title>
 </head>
 <body>
 <?php include_once('views/layouts/header.php') ?>
@@ -96,7 +96,7 @@
 <?php include_once('views/layouts/footer.php') ?>
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
 <script src="template/js/one.js"></script>
 <script src="template/js/scroll.js"></script>
 <script src="template/js/easemove.js"></script>
