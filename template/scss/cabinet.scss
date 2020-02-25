@@ -1,5 +1,13 @@
 @import "header";
 @import "footer";
+.active-tab{
+  background-color: #f2f2f2 !important;
+  color: $darkGrey !important;
+}
+.nonactive-tab{
+  background-color: $midGrey !important;
+  color: #fff !important;
+}
 .desk{
   font-family: 'Scada', sans-serif;
   margin-top: 5%;
@@ -17,7 +25,7 @@
         padding: .9375rem 1.875rem;
         background-color: $midGrey;
         cursor: pointer;
-        &:nth-child(1){
+        &:nth-child(3){
           background-color: #f2f2f2;
           color: $darkGrey;
         }
@@ -32,7 +40,48 @@
       min-height: 518px;
       box-sizing: border-box;
       padding: 35px 30px;
+      .profile{
+        form{
+          font-size: 1.25em;
+          font-weight: 400;
+          color: $darkGrey;
+          div{
+            display: flex;
+            justify-content: space-between;
+            width: 41%;
+            label{
+              margin: auto 0;
+            }
+            input{
+              border: none;
+              width: 205px;
+              height: 50px;
+              text-align: center;
+              margin-bottom: 5px;
+              &::placeholder{
+                color: $darkGrey;
+              }
+            }
+            &:last-child{
+              display: flex;
+              justify-content: flex-end;
+              width: 100%;
+              margin-top: 130px;
+              input{
+                background-color: $pink;
+                color: #fff;
+                font-weight: 700;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+      .latest{
+        display: none;
+      }
       .cart{
+        display: none;
         form{
           font-weight: 700;
           .cards{
@@ -135,8 +184,8 @@
                   }
                 }
               }
-              }
             }
+          }
           .wrap-btn{
             display: flex;
             justify-content: space-between;

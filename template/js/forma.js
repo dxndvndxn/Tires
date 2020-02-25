@@ -58,7 +58,21 @@ $("#email").on('input', function(){
         submt.setAttribute('disabled','');
     }
 });
+$("#email2").on('input', function(){
+    let email2 = isValid("#email2", '[a-zA-Zа-яА-ЯёЁ_\\d][-a-zA-Zа-яА-ЯёЁ0-9_\\.\\d]*\\@[a-zA-Zа-яА-ЯёЁ\\d][-a-zA-Zа-яА-ЯёЁ\\.\\d]*\\.[a-zA-Zа-яА-Я]{2,6}$');
+    if(email2){
+        if(passin.value >= 8){
+            submt.removeAttribute('disabled');
+            passin.style.border = '1px solid green';
+        }
+        $("#email2").addClass('valid');
+    }else{
+        $("#email2").css({border:'1px solid red'});
+        submt.setAttribute('disabled','');
+    }
+});
 let passreg = document.querySelector('input[name=passreg]');
+let passin = document.querySelector('input[name=passin]');
 //Валидация пароля
 passreg.oninput = function() {
     if (this.value.length < 8) {
@@ -67,6 +81,18 @@ passreg.oninput = function() {
         this.focus();
     } else {
         if($("#email").hasClass('valid')) {
+            this.style.border = '1px solid green';
+            submt.removeAttribute('disabled');
+        }
+    }
+};
+passin.oninput = function() {
+    if (this.value.length < 8) {
+        this.style.border = '1px solid red';
+        submt.setAttribute('disabled','');
+        this.focus();
+    } else {
+        if($("#email2").hasClass('valid')) {
             this.style.border = '1px solid green';
             submt.removeAttribute('disabled');
         }

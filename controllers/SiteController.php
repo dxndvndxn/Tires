@@ -1,6 +1,8 @@
 <?php
 include_once(ROOT . '/model/ValuesForm.php');
 include_once(ROOT . '/components/Pagination.php');
+include_once(ROOT . '/components/User.php');
+
 
 class SiteController{
     public function actionIndex($page = 1){
@@ -19,6 +21,11 @@ class SiteController{
         $bolts = ValuesForm::getBolt();
         $takeoff = ValuesForm::getTakeoff();
         $pagination = new Pagination($total,$page,10,'');
+        $userIn = User::SignIn();
+        $userUp = User::SignUp();
+        $userOut = User::LogOut();
+        $userId = Register::checkLogged();
+        $userInfo = Register::getInfo($userId);
 
         $allList = ValuesForm::getAllProducts($page);
         require_once(ROOT . '/views/site/index.php');
@@ -38,6 +45,11 @@ class SiteController{
         $takeoff = ValuesForm::getTakeoff();
         $tires = ValuesForm::outputTires();
         $disks = ValuesForm::outputDisks();
+        $userUp = User::SignUp();
+        $userIn = User::SignIn();
+        $userOut = User::LogOut();
+        $userId = Register::checkLogged();
+        $userInfo = Register::getInfo($userId);
         require_once(ROOT . '/views/output/output.php');
         return true;
     }

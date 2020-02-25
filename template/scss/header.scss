@@ -89,8 +89,7 @@ header{
   padding-top: 100px;
   .wrap{
     display: flex;
-    align-items: flex-end;
-    flex-direction: column;
+    justify-content: space-between;
     margin-top: 3.125em;
     padding-right: 1em;
     position: relative;
@@ -117,7 +116,7 @@ header{
         width: 2em;
         position: absolute;
         top: -66%;
-        right: 0.5%;
+        right: 0;
         cursor: pointer;
         display: none;
         div{
@@ -133,10 +132,17 @@ header{
           }
         }
       }
+      .name{
+        text-decoration: none;
+        font-size: 1.0625em;
+        color: $pink;
+        font-weight: 700;
+      }
     }
     form{
       position: absolute;
       top: 0;
+      right: 0;
       input{
         display: none;
         background: none;
@@ -161,6 +167,11 @@ header{
           color: #fff;
         }
       }
+    }
+    .error{
+      font-weight: 700;
+      font-size: 22px;
+      color: $pink;
     }
   }
 }

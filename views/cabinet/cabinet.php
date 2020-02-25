@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="template/css/cart.css">
-    <title>Корзина</title>
+    <link rel="stylesheet" href="template/css/cabinet.css">
+    <title>Кабинет</title>
 </head>
 <body>
 <?php include_once('views/layouts/header.php') ?>
@@ -14,6 +14,8 @@
     <div class="desk-content">
         <div class="tabs">
             <span>Корзина</span>
+            <span>Прошлые покупки</span>
+            <span>Профиль</span>
         </div>
         <div class="desk-content-in">
             <div class="cart">
@@ -54,14 +56,24 @@
                     <div class="wrap-btn"><span class="total">Итого: <input type="number" value="46000" data-totall="46000" disabled class="total-inp">&#8381;</span><input type="submit" value="Оформить заказ"></div>
                 </form>
             </div>
+            <div class="latest"></div>
+            <div class="profile">
+                <form action="#" method="post">
+                    <div><label>Имя</label><input type="text" placeholder="Илья"></div>
+                    <div><label>Фамилия</label><input type="text" placeholder="Налимов"></div>
+                    <div><label>E-mail</label><input type="email" placeholder="<?php echo $userInfo['email'];?>"></div>
+                    <div><label>Старый пароль</label><input type="password" name="oldpass" placeholder="********"></div>
+                    <div><label>Новый пароль</label><input type="password" name="newpass" placeholder="********"></div>
+                    <div><input type="submit" value="Сохранить"></div>
+                </form>
+            </div>
         </div>
     </div>
     <div></div>
 </div>
-
 <?php include_once('views/layouts/footer.php') ?>
 <script src="template/js/scroll.js"></script>
 <script src="template/js/forma.js"></script>
-<script src="template/js/cart.js"></script>
+<script src="template/js/cabinet.js"></script>
 </body>
 </html>
