@@ -42,8 +42,8 @@
                             В наличии
                         </div>
                         <div class="wrap_btn">
-                            <button>В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
-                            <button>Купить в 1 клик</button>
+                            <button data-id="<?php echo $value['id'].'t' ?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
+                            <button class="buy" data-id="<?php echo $value['id'].'t' ?>">Купить в 1 клик</button>
                         </div>
                     </div>
                 </div>
@@ -71,8 +71,8 @@
                             В наличии
                         </div>
                         <div class="wrap_btn">
-                            <button>В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
-                            <button>Купить в 1 клик</button>
+                            <button data-id="<?php echo $value['id'].'d' ?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
+                            <button class="buy" data-id="<?php echo $value['id'].'d' ?>">Купить в 1 клик</button>
                         </div>
                     </div>
                 </div>

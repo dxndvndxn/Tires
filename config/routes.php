@@ -1,5 +1,6 @@
 <?php
 return array(
+    'ajax' => 'ajax/index',
     'tirefit' => 'tireFit/info' ,
     'contacts' => 'contacts/info',
     'storage' => 'storage/info' ,

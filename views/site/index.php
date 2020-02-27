@@ -44,8 +44,8 @@
                         В наличии
                     </div>
                     <div class="wrap_btn">
-                        <button>В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
-                        <button>Купить в 1 клик</button>
+                        <button data-id="<?php echo $value['tire_id'].'d' ?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
+                        <button class="buy" data-id="<?php echo $value['tire_id'].'t' ?>">Купить в 1 клик</button>
                     </div>
                 </div>
             </div>
@@ -71,8 +71,8 @@
                             В наличии
                         </div>
                         <div class="wrap_btn">
-                            <button>В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
-                            <button>Купить в 1 клик</button>
+                            <button data-id="<?php echo $value['disk_id'].'d' ?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
+                            <button class="buy" data-id="<?php echo $value['disk_id'].'d' ?>">Купить в 1 клик</button>
                         </div>
                     </div>
                 </div>
@@ -96,6 +96,7 @@
 <?php include_once('views/layouts/footer.php') ?>
 <script src="template/js/one.js"></script>
 <script src="template/js/scroll.js"></script>
+<script src="template/js/ajax.js"></script>
 <script src="template/js/forma.js"></script>
 </body>
 </html>

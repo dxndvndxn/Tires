@@ -4,11 +4,17 @@ include_once(ROOT . '/components/Pagination.php');
 include_once(ROOT . '/components/User.php');
 
 
+
 class SiteController{
     public function actionIndex($page = 1){
         if($page == ""){
             $page = 1;
         }
+//        print_r($_SESSION);
+////        foreach ($_SESSION['buylist'] as $id => $value){
+////            unset($_SESSION['buylist'][$id]);
+////        }
+//        print_r($_SESSION['buylist']);
         $widthTire = ValuesForm::getTireWidth();
         $heightTire = ValuesForm::getTireHeight();
         $diametrTire = ValuesForm::getTireDiametr();
@@ -24,8 +30,9 @@ class SiteController{
         $userIn = User::SignIn();
         $userUp = User::SignUp();
         $userOut = User::LogOut();
-        $userId = Register::checkLogged();
-        $userInfo = Register::getInfo($userId);
+        if(isset($_SESSION['user'])){
+            $userInfo = Register::getInfo($_SESSION['user']);
+        }
 
         $allList = ValuesForm::getAllProducts($page);
         require_once(ROOT . '/views/site/index.php');
@@ -48,8 +55,9 @@ class SiteController{
         $userUp = User::SignUp();
         $userIn = User::SignIn();
         $userOut = User::LogOut();
-        $userId = Register::checkLogged();
-        $userInfo = Register::getInfo($userId);
+        if(isset($_SESSION['user'])){
+            $userInfo = Register::getInfo($_SESSION['user']);
+        }
         require_once(ROOT . '/views/output/output.php');
         return true;
     }

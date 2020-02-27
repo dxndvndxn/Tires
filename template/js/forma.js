@@ -5,17 +5,19 @@ let forma = document.querySelector('#up_in');
 let close = document.querySelector('.close');
 let submt = document.querySelector("input[type='submit']");
 //По клику войти
-signIn.addEventListener('click',()=>{
-    for(let i = 0; i < forma.children.length;i++){
-        if(forma[i].classList.contains('signIn')){
-            forma[i].style.display = 'block';
-            close.style.display = 'block';
-            submt.setAttribute('value','Вход');
-        }else{
-            forma[i].style.display = 'none';
+    signIn.addEventListener('click',()=>{
+        for(let i = 0; i < forma.children.length;i++){
+            if(forma[i].classList.contains('signIn')){
+                forma[i].style.display = 'block';
+                close.style.display = 'block';
+                submt.setAttribute('value','Вход');
+                submt.setAttribute('name','in');
+            }else{
+                forma[i].style.display = 'none';
+            }
         }
-    }
-});
+    });
+
 //По клику зарегаться
 signUp.addEventListener('click',()=>{
     for(let i = 0; i < forma.children.length;i++){
@@ -23,6 +25,7 @@ signUp.addEventListener('click',()=>{
             forma[i].style.display = 'block';
             close.style.display = 'block';
             submt.setAttribute('value','Регистрация');
+            submt.setAttribute('name','submit');
         }else{
             forma[i].style.display = 'none';
         }

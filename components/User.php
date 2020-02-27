@@ -1,12 +1,14 @@
 <?php
 include_once (ROOT . '/model/Register.php');
 class User{
+
+
+    //Регеаем
     public static function SignUp(){
         $errors = [];
-        if(isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['passreg'])){
-            $name = $_POST['email'];
-            $passreg = $_POST['passreg'];
-            $result = false;
+        if(isset($_POST['submit'])){
+            $name = trim($_POST['email']);
+            $passreg = trim($_POST['passreg']);
             if(!Register::justCheckEmail($name)){
                 array_push($errors,'email - не OK');
             }
@@ -18,15 +20,20 @@ class User{
             }
             if($errors == false){
                 Register::insertUser($name,$passreg);
+                array_push($errors,'Успешная регистрация!');
             }
         }
         return $errors;
     }
+
+
+
+    //Заходим
     public static function SignIn(){
         $errors = [];
-        if(isset($_POST['submit']) && isset($_POST['login']) && isset($_POST['passin'])){
-            $login = $_POST['login'];
-            $pass = $_POST['passin'];
+        if(isset($_POST['in'])){
+            $login = trim($_POST['login']);
+            $pass = trim($_POST['passin']);
             if(!Register::justCheckEmail($login)){
                 array_push($errors,'Неправильный E-mail');
             }
@@ -44,14 +51,20 @@ class User{
         }
         return $errors;
     }
+
+
+
+    //Выходим
     public static function LogOut(){
-        if(isset($_POST['submit'])){
-            if(isset($_POST['logout'])){
-                unset($_SESSION['user']);
-                header("Location: /");
-            }
+        if(isset($_GET['exit'])){
+            unset($_SESSION['user']);
+            header("Location: /");
         }
     }
+
+
+
+    //Гость или нет
     public static function isGest(){
         if(isset($_SESSION['user'])){
             return false;
@@ -59,4 +72,37 @@ class User{
             return true;
         }
 }
+
+    public static function getProduct(){
+        if(isset($_SESSION['buylist'])){
+            return $_SESSION['buylist'];
+        }else {
+            return false;
+        }
+    }
+
+
+
+    //Заполняем данные о юзере в базу
+    public static function fillOutUser(){
+        $userId = Register::checkLogged();
+        $user = Register::getInfo($userId);
+        $errors = [];
+        if(isset($_POST['update'])){
+                $name = trim($_POST['newname']);
+                $lastname = trim($_POST['newfam']);
+                $newlogin = $_POST['newem'];
+                $tel = trim($_POST['tel']);
+                $newpass = trim($_POST['newpass']);
+                if($newlogin == Register::checkIdForUpdate($userId)) {
+                    Register::fillOut($userId,$name,$lastname,$newlogin,$tel,$newpass);
+                }elseif($newlogin != Register::checkIdForUpdate($userId) && Register::checkEmail($newlogin)){
+                    array_push($errors,  'Такой E-mail уже используется');
+                }
+                if(empty($errors)){
+                    Register::fillOut($userId,$name,$lastname,$newlogin,$tel,$newpass);
+                }
+        }
+        return $errors;
+    }
 }

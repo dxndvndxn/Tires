@@ -153,7 +153,7 @@ class ValuesForm
         $db = self::getConnect();
 
         //Запросы в базу на все записи
-        $tires = mysqli_query($db,"SELECT width AS tire_width,height,diametr AS tire_diametr,season,catalog_tire.id AS tire_id,catalog_tire.tire_name,catalog_tire.price AS tire_price,catalog_tire. tire_description FROM tire_width 
+        $tires = mysqli_query($db,"SELECT width AS tire_width,height,diametr AS tire_diametr,season,catalog_tire.id AS tire_id,catalog_tire.tire_name,catalog_tire.price AS tire_price,catalog_tire.tire_description FROM tire_width 
 JOIN catalog_tire on tire_width.id = catalog_tire.tire_width_id 
 JOIN tire_height on catalog_tire.tire_height_id = tire_height.id 
 JOIN tire_diametr on catalog_tire.tire_diametr_id = tire_diametr.id 
@@ -202,7 +202,6 @@ WHERE available = 1 ORDER BY catalog_diskov.id DESC');
              array_splice($commonList,0,10);
          }
          //Возвращаем массив , где в каждом ключе нужные данные для вывода на одну страницу
-
         return $lastList[$page];
 
     }
