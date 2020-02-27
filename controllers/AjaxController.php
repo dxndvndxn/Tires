@@ -15,10 +15,12 @@ class AjaxController{
     public static function actionIndex()
     {
         $buyList = [];
-        $_SESSION['buylist'];
-        $buyList = $_SESSION['buylist'];
-        $count = 0;
         if (strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            if(isset($_SESSION['buylist'])){
+                $_SESSION['buylist'];
+                $buyList = $_SESSION['buylist'];
+            }
+            $count = 0;
             foreach ($_POST as $i => $value){
                 if(array_key_exists($i,$buyList)){
                     $_SESSION['buylist'][$i]++;

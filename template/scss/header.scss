@@ -79,6 +79,15 @@ header{
           img{
             color: #fff;
           }
+          #count{
+            background-color: $pink;
+            border-radius: 50%;
+            width: 28px;
+            height: 26px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
     }
