@@ -99,6 +99,7 @@ class Register{
             return $result->fetch();
         }
     }
+    //Заполняем данные о пользователе
     public static function fillOut($userId,$namee,$lastname,$newlogin,$tel,$newpass){
         $db = Db::getCon();
 
@@ -111,5 +112,29 @@ class Register{
         $result->bindParam(':tel',$tel,PDO::PARAM_STR);
         $result->bindParam(':newpass',$newpass,PDO::PARAM_STR);
         return $result->execute();
+    }
+    //Заполняем карзину шинами
+    public static function getTiresById($ids){
+        $products = [];
+        $db = Db::getCon();
+        $idStr = implode(',',$ids);
+        $sql = "SELECT width AS tire_width,height,diametr AS tire_diametr,catalog_tire.catalog_tire_id AS tire_id,catalog_tire.catalog_tire_name,catalog_tire.price AS tire_price FROM tire_width 
+JOIN catalog_tire on tire_width.id = catalog_tire.catalog_tire_width
+JOIN tire_height on catalog_tire.catalog_tire_height = tire_height.id 
+JOIN tire_diametr on catalog_tire.catalog_tire_diameter = tire_diametr.id 
+ WHERE available = 1 AND catalog_tire.catalog_tire_id IN ($idStr) ORDER by catalog_tire.catalog_tire_id DESC";
+        $result = $db->query($sql);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $i = 0;
+        while($row =$result->fetch()){
+            $products[$i]['tire_id'] = $row['tire_id'];
+            $products[$i]['tire_width'] = $row['tire_width'];
+            $products[$i]['height'] = $row['height'];
+            $products[$i]['tire_diametr'] = $row['tire_diametr'];
+            $products[$i]['tire_price'] = $row['tire_price'];
+            $products[$i]['tire_price'] = $row['tire_price'];
+            $i++;
+        }
+        return $products;
     }
 }

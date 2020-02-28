@@ -23,15 +23,16 @@
                     <div class="wrap-img"><img src="template/img/tireone.png" alt=""></div>
                     <div class="article-description">
                         <div class="title">
-                            <span class="name"><?php echo $value['tire_name'] ?></span>
+                            <span class="name"><?php echo $value['catalog_tire_name'] ?></span>
                             <span class="width"><?php echo $value['width'] ?></span><span class="height">/S<?php echo $value['height'] ?></span>
                             <span class="diametr">R<?php echo $value['diametr'] ?></span>
                         </div>
-                        <p class="manual"><?php echo $value['tire_description'] ?>
+                        <p class="manual"><?php echo $value['catalog_tire_description'] ?>
                             <br>
                             <br>
                             <span class="where">сделаны в Португалии </span> <br>
                             <span class="useOrnot">б\у месяц</span>
+                            <span class="season"><?php echo $value['season'] ?></span>
                         </p>
                     </div>
                     <div class="price-buy">
@@ -42,8 +43,8 @@
                             В наличии
                         </div>
                         <div class="wrap_btn">
-                            <button data-id="<?php echo $value['id'].'t' ?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
-                            <button class="buy" data-id="<?php echo $value['id'].'t' ?>">Купить в 1 клик</button>
+                            <button class="buy tire" data-id="<?php echo $value['catalog_tire_id']?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
+                            <button data-id="<?php echo $value['catalog_tire_id']?>">Купить в 1 клик</button>
                         </div>
                     </div>
                 </div>
@@ -54,13 +55,13 @@
                     <div class="wrap-img"><img src="template/img/tireone.png" alt=""></div>
                     <div class="article-description">
                         <div class="title">
-                            <span class="name"><?php echo $value['disk_name'] ?></span>
+                            <span class="name"><?php echo $value['catalog_diskov_name'] ?></span>
                             <span class="width"><?php echo $value['width'] ?>j</span>x<span class="diametr"><?php echo $value['diametr'] ?></span>
                             <span class="width"><?php echo $value['bolt_amount'] ?></span>x<span class="diametr"><?php echo $value['pcd'] ?></span>
                             <span class="diametr">ET<?php echo $value['takeoff'] ?></span>
                             <span class="diametr">DIA<?php echo $value['dia'] ?></span>
                         </div>
-                        <p class="manual"><?php echo $value['disk_description'] ?>
+                        <p class="manual"><?php echo $value['catalog_diskov_description'] ?>
                         </p>
                     </div>
                     <div class="price-buy">
@@ -71,8 +72,8 @@
                             В наличии
                         </div>
                         <div class="wrap_btn">
-                            <button data-id="<?php echo $value['id'].'d' ?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
-                            <button class="buy" data-id="<?php echo $value['id'].'d' ?>">Купить в 1 клик</button>
+                            <button class="buy disk" data-id="<?php echo $value['catalog_diskov_id']?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
+                            <button data-id="<?php echo $value['catalog_diskov_id']?>">Купить в 1 клик</button>
                         </div>
                     </div>
                 </div>
@@ -100,6 +101,7 @@
 <script src="template/js/one.js"></script>
 <script src="template/js/scroll.js"></script>
 <script src="template/js/easemove.js"></script>
+<script src="template/js/ajax.js"></script>
 <script src="template/js/forma.js"></script>
 </body>
 </html>

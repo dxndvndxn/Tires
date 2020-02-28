@@ -19,16 +19,16 @@
     <div class="article">
 
         <?php foreach ($allList as $value): ?>
-        <?php if(isset($value['tire_name'])): ?>
+        <?php if(isset($value['catalog_tire_name'])): ?>
             <div class="article-out">
                 <div class="wrap-img"><img src="template/img/tireone.png" alt=""></div>
                 <div class="article-description">
                     <div class="title">
-                        <span class="name"><?php echo $value['tire_name'] ?></span>
+                        <span class="name"><?php echo $value['catalog_tire_name'] ?></span>
                         <span class="width"><?php echo $value['tire_width'] ?></span><span class="height">/S<?php echo $value['height'] ?></span>
                         <span class="diametr">R<?php echo $value['tire_diametr'] ?></span>
                     </div>
-                    <p class="manual"><?php echo $value['tire_description'] ?>
+                    <p class="manual"><?php echo $value['catalog_tire_description'] ?>
                         <br>
                         <br>
                         <span class="where">сделаны в Португалии </span> <br>
@@ -44,23 +44,23 @@
                         В наличии
                     </div>
                     <div class="wrap_btn">
-                        <button data-id="<?php echo $value['tire_id'].'d' ?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
-                        <button class="buy" data-id="<?php echo $value['tire_id'].'t' ?>">Купить в 1 клик</button>
+                        <button class="buy tire" data-id="<?php echo $value['tire_id']?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
+                        <button data-id="<?php echo $value['tire_id']?>">Купить в 1 клик</button>
                     </div>
                 </div>
             </div>
-            <?php elseif(isset($value['disk_name'])):?>
+            <?php elseif(isset($value['catalog_diskov_name'])):?>
                 <div class="article-out">
                     <div class="wrap-img"><img src="template/img/tireone.png" alt=""></div>
                     <div class="article-description">
                         <div class="title">
-                            <span class="name"><?php echo $value['disk_name'] ?></span>
+                            <span class="name"><?php echo $value['catalog_diskov_name'] ?></span>
                             <span class="width"><?php echo $value['disk_width'] ?>j</span>x<span class="diametr"><?php echo $value['disk_diametr'] ?></span>
                             <span class="width"><?php echo $value['bolt_amount'] ?></span>x<span class="diametr"><?php echo $value['pcd'] ?></span>
                             <span class="diametr">ET<?php echo $value['takeoff'] ?></span>
                             <span class="diametr">DIA<?php echo $value['dia'] ?></span>
                         </div>
-                        <p class="manual"><?php echo $value['disk_description'] ?>
+                        <p class="manual"><?php echo $value['catalog_diskov_description'] ?>
                         </p>
                     </div>
                     <div class="price-buy">
@@ -71,8 +71,8 @@
                             В наличии
                         </div>
                         <div class="wrap_btn">
-                            <button data-id="<?php echo $value['disk_id'].'d' ?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
-                            <button class="buy" data-id="<?php echo $value['disk_id'].'d' ?>">Купить в 1 клик</button>
+                            <button class="buy disk" data-id="<?php echo $value['disk_id']?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
+                            <button data-id="<?php echo $value['disk_id']?>">Купить в 1 клик</button>
                         </div>
                     </div>
                 </div>

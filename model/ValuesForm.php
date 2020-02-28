@@ -153,21 +153,21 @@ class ValuesForm
         $db = self::getConnect();
 
         //Запросы в базу на все записи
-        $tires = mysqli_query($db,"SELECT width AS tire_width,height,diametr AS tire_diametr,season,catalog_tire.id AS tire_id,catalog_tire.tire_name,catalog_tire.price AS tire_price,catalog_tire.tire_description FROM tire_width 
-JOIN catalog_tire on tire_width.id = catalog_tire.tire_width_id 
-JOIN tire_height on catalog_tire.tire_height_id = tire_height.id 
-JOIN tire_diametr on catalog_tire.tire_diametr_id = tire_diametr.id 
-JOIN tire_season on catalog_tire.tire_season_id = tire_season.id
- WHERE available = 1 ORDER by catalog_tire.id DESC");
+        $tires = mysqli_query($db,"SELECT width AS tire_width,height,diametr AS tire_diametr,season,catalog_tire.catalog_tire_id AS tire_id,catalog_tire.catalog_tire_name,catalog_tire.price AS tire_price,catalog_tire.catalog_tire_description FROM tire_width 
+JOIN catalog_tire on tire_width.id = catalog_tire.catalog_tire_width
+JOIN tire_height on catalog_tire.catalog_tire_height = tire_height.id 
+JOIN tire_diametr on catalog_tire.catalog_tire_diameter = tire_diametr.id 
+JOIN tire_season on catalog_tire.catalog_tire_season = tire_season.id
+ WHERE available = 1 ORDER by catalog_tire.catalog_tire_id DESC");
 
-        $disks = mysqli_query($db,'SELECT width AS disk_width,diametr AS disk_diametr,takeoff,bolt_amount,pcd,dia,catalog_diskov.id AS disk_id,catalog_diskov.disk_name,catalog_diskov.disk_description,catalog_diskov.price AS disk_price FROM disk_width 
-JOIN catalog_diskov ON disk_width.id = catalog_diskov.disk_width_id 
-JOIN disk_diametr ON catalog_diskov.disk_diametr_id = disk_diametr.id 
-JOIN disk_takeoff ON catalog_diskov.disk_takeoff_id = disk_takeoff.id 
-JOIN disk_bolt_amount ON catalog_diskov.bolt_amount_id = disk_bolt_amount.id 
-JOIN pcd ON catalog_diskov.pcd_id = pcd.id 
-JOIN dia ON catalog_diskov.dia_id = dia.id 
-WHERE available = 1 ORDER BY catalog_diskov.id DESC');
+        $disks = mysqli_query($db,'SELECT width AS disk_width,diametr AS disk_diametr,takeoff,bolt_amount,pcd,dia,catalog_diskov.catalog_diskov_id AS disk_id,catalog_diskov.catalog_diskov_name,catalog_diskov.catalog_diskov_description,catalog_diskov.price AS disk_price FROM disk_width 
+JOIN catalog_diskov ON disk_width.id = catalog_diskov.catalog_diskov_width 
+JOIN disk_diametr ON catalog_diskov.catalog_diskov_diametr = disk_diametr.id 
+JOIN disk_takeoff ON catalog_diskov.catalog_diskov_takeoff = disk_takeoff.id 
+JOIN disk_bolt_amount ON catalog_diskov.catalog_diskov_bolt_amount = disk_bolt_amount.id 
+JOIN pcd ON catalog_diskov.catalog_diskov_pcd = pcd.id 
+JOIN dia ON catalog_diskov.catalog_diskov_dia = dia.id 
+WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
 
         $commonList = array();
         $shuffList = array();
@@ -209,8 +209,8 @@ WHERE available = 1 ORDER BY catalog_diskov.id DESC');
     public static function countTires(){
         $db = self::getConnect();
 
-        $countTires = mysqli_query($db,'SELECT COUNT(id) as COUNT FROM catalog_tire WHERE available = 1');
-        $countDisks = mysqli_query($db,'SELECT COUNT(id) as COUNT FROM catalog_diskov WHERE available = 1');
+        $countTires = mysqli_query($db,'SELECT COUNT(catalog_tire_id) as COUNT FROM catalog_tire WHERE available = 1');
+        $countDisks = mysqli_query($db,'SELECT COUNT(catalog_diskov_id) as COUNT FROM catalog_diskov WHERE available = 1');
         $row = mysqli_fetch_array($countTires);
         $row2 = mysqli_fetch_array($countDisks);
         return $row[0] + $row2[0];
@@ -218,7 +218,7 @@ WHERE available = 1 ORDER BY catalog_diskov.id DESC');
     //Присылаем шины
     public static function outputTires(){
         $db = self::getConnect();
-        foreach ($_GET as $name =>$value){
+        foreach ($_GET as $name => $value){
             if($value == null){
                 $_GET[$name] = "'%'";
             }
@@ -230,12 +230,12 @@ WHERE available = 1 ORDER BY catalog_diskov.id DESC');
             $diametr = $_GET['diametr_tire'];
             $season = $_GET['season'];
 
-            $query = mysqli_query($db, "SELECT width,height,diametr,season,catalog_tire.id,catalog_tire.tire_name,catalog_tire.price,catalog_tire.tire_description FROM tire_width
-        JOIN catalog_tire on tire_width.id = catalog_tire.tire_width_id
-        JOIN tire_height on catalog_tire.tire_height_id = tire_height.id
-        JOIN tire_diametr on catalog_tire.tire_diametr_id = tire_diametr.id
-        JOIN tire_season on catalog_tire.tire_season_id = tire_season.id
-        WHERE tire_width_id LIKE $width AND tire_height_id LIKE $height AND tire_diametr_id LIKE $diametr AND tire_season_id LIKE $season ORDER BY catalog_tire.id DESC;");
+            $query = mysqli_query($db, "SELECT width,height,diametr,season,catalog_tire.catalog_tire_id,catalog_tire.catalog_tire_name,catalog_tire.price,catalog_tire.catalog_tire_description FROM tire_width
+        JOIN catalog_tire on tire_width.id = catalog_tire.catalog_tire_width
+        JOIN tire_height on catalog_tire.catalog_tire_height = tire_height.id
+        JOIN tire_diametr on catalog_tire.catalog_tire_diameter = tire_diametr.id
+        JOIN tire_season on catalog_tire.catalog_tire_season = tire_season.id
+        WHERE catalog_tire_width LIKE $width AND catalog_tire_height LIKE $height AND catalog_tire_diameter LIKE $diametr AND catalog_tire_season LIKE $season ORDER BY catalog_tire.catalog_tire_id DESC;");
 
             while($row = mysqli_fetch_array($query)){
                 array_push($tiresList,$row);
@@ -262,14 +262,14 @@ WHERE available = 1 ORDER BY catalog_diskov.id DESC');
             $bolt = $_GET['bolt'];
             $pcd = $_GET['pcd'];
 
-            $query = mysqli_query($db, "SELECT width,diametr,takeoff,dia,bolt_amount,pcd,catalog_diskov.id,catalog_diskov.disk_name,catalog_diskov.price,catalog_diskov.disk_description FROM disk_width 
-            JOIN catalog_diskov on disk_width.id = catalog_diskov.disk_width_id 
-            JOIN disk_diametr on catalog_diskov.disk_diametr_id = disk_diametr.id 
-            JOIN disk_takeoff on catalog_diskov.disk_takeoff_id = disk_takeoff.id 
-            JOIN dia on catalog_diskov.dia_id = dia.id 
-            JOIN disk_bolt_amount on catalog_diskov.bolt_amount_id = disk_bolt_amount.id 
-            JOIN pcd on catalog_diskov.pcd_id = pcd.id 
-            WHERE disk_width_id LIKE $width AND disk_diametr_id LIKE $diametr AND disk_takeoff_id LIKE $takeoff AND dia_id LIKE $dia AND bolt_amount_id LIKE $bolt AND pcd_id LIKE $pcd ORDER BY catalog_diskov.id DESC;");
+            $query = mysqli_query($db, "SELECT width,diametr,takeoff,dia,bolt_amount,pcd,catalog_diskov.catalog_diskov_id,catalog_diskov.catalog_diskov_name,catalog_diskov.price,catalog_diskov.catalog_diskov_description FROM disk_width 
+            JOIN catalog_diskov on disk_width.id = catalog_diskov.catalog_diskov_width 
+            JOIN disk_diametr on catalog_diskov.catalog_diskov_diametr = disk_diametr.id 
+            JOIN disk_takeoff on catalog_diskov.catalog_diskov_takeoff = disk_takeoff.id 
+            JOIN dia on catalog_diskov.catalog_diskov_dia = dia.id 
+            JOIN disk_bolt_amount on catalog_diskov.catalog_diskov_bolt_amount = disk_bolt_amount.id 
+            JOIN pcd on catalog_diskov.catalog_diskov_pcd = pcd.id 
+            WHERE catalog_diskov_width LIKE $width AND catalog_diskov_diametr LIKE $diametr AND catalog_diskov_takeoff LIKE $takeoff AND catalog_diskov_dia LIKE $dia AND catalog_diskov_bolt_amount LIKE $bolt AND catalog_diskov_pcd LIKE $pcd ORDER BY catalog_diskov.catalog_diskov_id DESC;");
 
             while ($row = mysqli_fetch_array($query)) {
                 array_push($diskList, $row);

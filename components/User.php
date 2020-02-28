@@ -73,11 +73,33 @@ class User{
         }
 }
 
-    public static function getProduct(){
-        if(isset($_SESSION['buylist'])){
-            return $_SESSION['buylist'];
+    public static function getTiresBuyList(){
+        if(isset($_SESSION['tires'])){
+            return $_SESSION['tires'];
         }else {
             return false;
+        }
+    }
+    public static function getDisksBuyList(){
+        if(isset($_SESSION['disks'])){
+            return $_SESSION['disks'];
+        }else {
+            return false;
+        }
+    }
+    public static function productTires(){
+        $productTires = self::getTiresBuyList();
+        $getArticles;
+        if($productTires){
+            $tiresIds = array_keys($productTires);
+            $getArticles = Register::getTiresById($tiresIds);
+        }
+        return $getArticles;
+    }
+    public static function productDisks(){
+        $productDisks = self::getDisksBuyList();
+        if($productDisks){
+            $disksIds = array_keys($productDisks);
         }
     }
 
