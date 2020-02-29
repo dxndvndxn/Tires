@@ -21,39 +21,47 @@
             <div class="cart">
                 <form action="#">
                     <div class="cards">
-                        <div class="article">
-                            <div class="order">
-                                <div class="title">
-                                    <span class="name">ContiSportContact™5</span>
-                                    <span class="useOrnot">б/у</span>
-                                    <span class="width">255</span><span class="height">/S55</span>
-                                    <span class="diametr">R19</span>
+                        <?php if (isset($_SESSION['tires'])):?>
+                            <?php foreach ($tires as $id => $value):?>
+                                <div class="article">
+                                    <div class="order">
+                                        <div class="title">
+                                            <span class="name"><?php echo $value['catalog_tire_name'];?></span>
+                                            <span class="useOrnot">б/у</span>
+                                            <span class="width"><?php echo $value['tire_width'];?></span><span class="height">/S<?php echo $value['height'];?></span>
+                                            <span class="diametr"><?php echo $value['tire_diametr'];?></span>
+                                        </div>
+                                        <div class="amount">X<input type="number" value="<?php echo $_SESSION['tires'][$value['tire_id']];?>" data-am="1" disabled>
+                                            <div class="minus"><span class="remove"></span></div>
+                                            <div class="plus"><span></span><span class="add"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="price"><div class="wrapper"><input type="number" name="howmuch" value="<?php echo $value['tire_price'];?>" data-value="<?php echo $value['tire_price'];?>" disabled>&#8381;</div><div class="close"><span></span><span class="cl"></span></div></div>
                                 </div>
-                                <div class="amount">X<input type="number" value="1" data-am="1" disabled>
-                                    <div class="minus"><span class="remove"></span></div>
-                                    <div class="plus"><span></span><span class="add"></span></div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                        <?php if (isset($_SESSION['disks'])):?>
+                            <?php  foreach ($disks as $id => $value):?>
+                                <div class="article">
+                                    <div class="order">
+                                        <div class="title">
+                                            <span class="name"><?php echo $value['catalog_diskov_name'];?></span>
+                                            <span class="width"><?php echo $value['disk_width'];?>j</span>x<span class="diametr"><?php echo $value['disk_diametr'];?></span>
+                                            <span class="width"><?php echo $value['bolt_amount'];?></span>x<span class="diametr"><?php echo $value['pcd'];?></span>
+                                            <span class="diametr"><?php echo $value['takeoff'];?></span>
+                                            <span class="diametr"><?php echo $value['dia'];?></span>
+                                        </div>
+                                        <div class="amount">X<input type="number" value="<?php echo $_SESSION['disks'][$value['disk_id']];?>" data-am="1" disabled>
+                                            <div class="minus"><span class="remove"></span></div>
+                                            <div class="plus"><span></span><span class="add"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="price"><div><input type="number" name="howmuch" value="<?php echo $value['disk_price'];?>" data-value="<?php echo $value['disk_price'];?>" disabled>&#8381;</div><div class="close"><span></span><span class="cl"></span></div></div>
                                 </div>
-                            </div>
-                            <div class="price"><div class="wrapper"><input type="number" name="howmuch" value="23000" data-value="23000" disabled>&#8381;</div><div class="close"><span></span><span class="cl"></span></div></div>
-                        </div>
-                        <div class="article">
-                            <div class="order">
-                                <div class="title">
-                                    <span class="name">WSP R648</span>
-                                    <span class="width">9.0j</span>x<span class="diametr">18</span>
-                                    <span class="width">5</span>x<span class="diametr">120.0</span>
-                                    <span class="diametr">ET32.0</span>
-                                    <span class="diametr">DIA72.6</span>
-                                </div>
-                                <div class="amount">X<input type="number" value="1" data-am="1" disabled>
-                                    <div class="minus"><span class="remove"></span></div>
-                                    <div class="plus"><span></span><span class="add"></span></div>
-                                </div>
-                            </div>
-                            <div class="price"><div><input type="number" name="howmuch" value="23000" data-value="23000" disabled>&#8381;</div><div class="close"><span></span><span class="cl"></span></div></div>
-                        </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
-                    <div class="wrap-btn"><span class="total">Итого: <input type="number" value="46000" data-totall="46000" disabled class="total-inp">&#8381;</span><input type="submit" value="Оформить заказ"></div>
+                    <div class="wrap-btn"><span class="total">Итого: <input type="number" value="<?php echo $commonTotal?>" data-totall="<?php echo $commonTotal?>" disabled class="total-inp">&#8381;</span><input type="submit" value="Оформить заказ"></div>
                 </form>
             </div>
             <div class="latest"></div>

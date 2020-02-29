@@ -132,7 +132,37 @@ JOIN tire_diametr on catalog_tire.catalog_tire_diameter = tire_diametr.id
             $products[$i]['height'] = $row['height'];
             $products[$i]['tire_diametr'] = $row['tire_diametr'];
             $products[$i]['tire_price'] = $row['tire_price'];
-            $products[$i]['tire_price'] = $row['tire_price'];
+            $products[$i]['catalog_tire_name'] = $row['catalog_tire_name'];
+            $i++;
+        }
+        return $products;
+    }
+    public static function getDisksById($ids){
+        $products = [];
+        $db = Db::getCon();
+        $idStr = implode(',',$ids);
+        $sql = "SELECT width AS disk_width,diametr AS disk_diametr,takeoff,bolt_amount,pcd,dia,catalog_diskov.catalog_diskov_id AS disk_id,catalog_diskov.catalog_diskov_name,catalog_diskov.price AS disk_price FROM disk_width 
+JOIN catalog_diskov ON disk_width.id = catalog_diskov.catalog_diskov_width 
+JOIN disk_diametr ON catalog_diskov.catalog_diskov_diametr = disk_diametr.id 
+JOIN disk_takeoff ON catalog_diskov.catalog_diskov_takeoff = disk_takeoff.id 
+JOIN disk_bolt_amount ON catalog_diskov.catalog_diskov_bolt_amount = disk_bolt_amount.id 
+JOIN pcd ON catalog_diskov.catalog_diskov_pcd = pcd.id 
+JOIN dia ON catalog_diskov.catalog_diskov_dia = dia.id 
+WHERE available = 1 AND catalog_diskov.catalog_diskov_id IN ($idStr) ORDER BY catalog_diskov.catalog_diskov_id DESC";
+        $result = $db->query($sql);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $i = 0;
+        while($row =$result->fetch()){
+            $products[$i]['disk_id'] = $row['disk_id'];
+            $products[$i]['disk_width'] = $row['disk_width'];
+            $products[$i]['takeoff'] = $row['takeoff'];
+            $products[$i]['disk_diametr'] = $row['disk_diametr'];
+            $products[$i]['disk_price'] = $row['disk_price'];
+            $products[$i]['catalog_diskov_name'] = $row['catalog_diskov_name'];
+            $products[$i]['bolt_amount'] = $row['bolt_amount'];
+            $products[$i]['pcd'] = $row['pcd'];
+            $products[$i]['dia'] = $row['dia'];
+            $products[$i]['disk_price'] = $row['disk_price'];
             $i++;
         }
         return $products;

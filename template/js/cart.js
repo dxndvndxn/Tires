@@ -65,6 +65,7 @@ cards.addEventListener('click',function (e) {
        //Меняем значение инпута в прайсе
        mainParent[0].children[0].setAttribute('value',+mainParent[0].children[0].value - +mainParent[0].children[0].dataset.value);
        //Если значение единица возвращаем фолс
+       console.log(parentAmount.children[0]);
        if(parentAmount.children[0].value == 1){
            return false;
        }

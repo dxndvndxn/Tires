@@ -10,7 +10,6 @@ class SiteController{
         if($page == ""){
             $page = 1;
         }
-        print_r($_SESSION);
 //        foreach ($_SESSION['tires'] as $id => $value){
 //            unset($_SESSION['tires'][$id]);
 //        }

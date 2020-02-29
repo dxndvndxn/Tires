@@ -94,13 +94,40 @@ class User{
             $tiresIds = array_keys($productTires);
             $getArticles = Register::getTiresById($tiresIds);
         }
-        return $getArticles;
+        if(isset($getArticles)){
+            return $getArticles;
+        }
     }
     public static function productDisks(){
         $productDisks = self::getDisksBuyList();
+        $getArticles;
         if($productDisks){
             $disksIds = array_keys($productDisks);
+            $getArticles = Register::getDisksById($disksIds);
         }
+        if(isset($getArticles)){
+            return $getArticles;
+        }
+    }
+    public static function totalPriceTires($products){
+        $amountProductsInSess = self::getTiresBuyList();
+        $total = 0;
+        if($amountProductsInSess){
+            foreach ($products as $item){
+                $total += $item['tire_price'] * $amountProductsInSess[$item['tire_id']];
+            }
+        }
+        return $total;
+    }
+    public static function totalPriceDisks($products){
+        $amountProductsInSess = self::getDisksBuyList();
+        $total = 0;
+        if($amountProductsInSess){
+            foreach ($products as $item){
+                $total += $item['disk_price'] * $amountProductsInSess[$item['disk_id']];
+            }
+        }
+        return $total;
     }
 
 
