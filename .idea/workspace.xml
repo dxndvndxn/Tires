@@ -3,14 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="55f0cbf7-9f18-473b-b5a8-4f825b3e4cd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CabinetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CabinetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AjaxController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ValuesForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/ValuesForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/js/cabinet.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/cabinet.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/cabinet/cabinet.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cabinet/cabinet.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/cart/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cart/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/pcncart.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/repeatcart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/output/output.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/output/output.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/site/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +121,10 @@
       <workItem from="1582636815154" duration="872000" />
       <workItem from="1582641785823" duration="14944000" />
       <workItem from="1582713997898" duration="37062000" />
-      <workItem from="1582804938097" duration="48898000" />
+      <workItem from="1582804938097" duration="48916000" />
+      <workItem from="1583079914868" duration="3664000" />
+      <workItem from="1583139583489" duration="671000" />
+      <workItem from="1583315113221" duration="20605000" />
     </task>
     <servers />
   </component>

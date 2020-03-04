@@ -20,14 +20,8 @@ class CartController{
             $totalPriceDisk = 0;
         }
         $commonTotal = $totalPriceTire + $totalPriceDisk;
-//        print_r($_SESSION['tires']);
-//        print_r($disks);
-//        print_r($tires);
-//        foreach ($tires as $id => $value){
-//            echo $value['tire_id'];
-//        }
-//        print_r($_SESSION['tires']);
-//        echo $_SESSION['tires'][1];
+        print_r($_SESSION);
+        print_r($_POST);
         require_once('views/cart/cart.php');
         return true;
     }

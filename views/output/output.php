@@ -43,8 +43,14 @@
                             В наличии
                         </div>
                         <div class="wrap_btn">
-                            <button class="buy tire" data-id="<?php echo $value['catalog_tire_id']?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
-                            <button data-id="<?php echo $value['catalog_tire_id']?>">Купить в 1 клик</button>
+                            <button class="buy tire" data-id="<?php echo $value['tire_id']?>" <?php if(isset($_SESSION['tires'][$value['tire_id']])){echo 'disabled';} ?>>
+                                <?php if(isset($_SESSION['tires'][$value['tire_id']])){
+                                    echo 'В корзине!';
+                                }else{
+                                    echo "В корзину <img src=\"https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png\"";
+                                } ?>
+                            </button>
+                            <button data-id="<?php echo $value['tire_id']?>">Купить в 1 клик</button>
                         </div>
                     </div>
                 </div>
@@ -72,8 +78,14 @@
                             В наличии
                         </div>
                         <div class="wrap_btn">
-                            <button class="buy disk" data-id="<?php echo $value['catalog_diskov_id']?>">В корзину <img src="https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png"></button>
-                            <button data-id="<?php echo $value['catalog_diskov_id']?>">Купить в 1 клик</button>
+                            <button class="buy disk" data-id="<?php echo $value['disk_id']?>" <?php if(isset($_SESSION['disks'][$value['disk_id']])){echo 'disabled';} ?>>
+                                <?php if(isset($_SESSION['disks'][$value['disk_id']])){
+                                    echo 'В корзине!';
+                                }else{
+                                    echo "В корзину <img src=\"https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png\"";
+                                } ?>
+                            </button>
+                            <button data-id="<?php echo $value['disk_id']?>">Купить в 1 клик</button>
                         </div>
                     </div>
                 </div>

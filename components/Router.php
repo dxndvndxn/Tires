@@ -41,7 +41,6 @@ class Router{
                 }
                 $contrllObj = new $controllerName;
                 $result = call_user_func_array(array($contrllObj, $actionName), $segmentsS);
-//                $result = $contrllObj->$actionName($segments);
                 if($result !=null){
                     break;
                 }

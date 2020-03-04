@@ -7,16 +7,16 @@ class User{
     public static function SignUp(){
         $errors = [];
         if(isset($_POST['submit'])){
-            $name = trim($_POST['email']);
-            $passreg = trim($_POST['passreg']);
+            $name = htmlentities(trim($_POST['email']));
+            $passreg = htmlentities(trim($_POST['passreg']));
             if(!Register::justCheckEmail($name)){
-                array_push($errors,'email - не OK');
+                array_push($errors,'Email не валиден.');
             }
             if(!Register::checkPass($passreg)){
-                array_push($errors,'pass - не OK');
+                array_push($errors,'Пароль должен быть более 8 символов.');
             }
             if(Register::checkEmail($name)) {
-                array_push($errors,  'Такой E-mail уже используется');
+                array_push($errors,  'Такой E-mail уже используется.');
             }
             if($errors == false){
                 Register::insertUser($name,$passreg);
@@ -32,8 +32,8 @@ class User{
     public static function SignIn(){
         $errors = [];
         if(isset($_POST['in'])){
-            $login = trim($_POST['login']);
-            $pass = trim($_POST['passin']);
+            $login = htmlentities(trim($_POST['login']));
+            $pass = htmlentities(trim($_POST['passin']));
             if(!Register::justCheckEmail($login)){
                 array_push($errors,'Неправильный E-mail');
             }
@@ -87,6 +87,7 @@ class User{
             return false;
         }
     }
+    //Получаем шины выбранных покупак ивозращаем данные
     public static function productTires(){
         $productTires = self::getTiresBuyList();
         $getArticles;
@@ -98,6 +99,7 @@ class User{
             return $getArticles;
         }
     }
+    //Получаем диски выбранных покупак ивозращаем данные
     public static function productDisks(){
         $productDisks = self::getDisksBuyList();
         $getArticles;
@@ -109,6 +111,7 @@ class User{
             return $getArticles;
         }
     }
+    //Получаем цены шин
     public static function totalPriceTires($products){
         $amountProductsInSess = self::getTiresBuyList();
         $total = 0;
@@ -119,6 +122,7 @@ class User{
         }
         return $total;
     }
+    //Получаем цены дисков
     public static function totalPriceDisks($products){
         $amountProductsInSess = self::getDisksBuyList();
         $total = 0;
@@ -138,18 +142,25 @@ class User{
         $user = Register::getInfo($userId);
         $errors = [];
         if(isset($_POST['update'])){
-                $name = trim($_POST['newname']);
-                $lastname = trim($_POST['newfam']);
-                $newlogin = $_POST['newem'];
-                $tel = trim($_POST['tel']);
-                $newpass = trim($_POST['newpass']);
+                $name = htmlentities(trim($_POST['newname']));
+                $lastname = htmlentities(trim($_POST['newfam']));
+                $newlogin = htmlentities(trim($_POST['newem']));
+                $tel = htmlentities(trim($_POST['tel']));
+                $newpass = htmlentities(trim($_POST['newpass']));
                 if($newlogin == Register::checkIdForUpdate($userId)) {
                     Register::fillOut($userId,$name,$lastname,$newlogin,$tel,$newpass);
                 }elseif($newlogin != Register::checkIdForUpdate($userId) && Register::checkEmail($newlogin)){
                     array_push($errors,  'Такой E-mail уже используется');
                 }
+                if(!Register::checkPass($newpass)){
+                    array_push($errors,'Пароль должен быть более 8 символов.');
+                }
+                if(!Register::justCheckEmail($newlogin)){
+                    array_push($errors,'Email не валиден.');
+                }
                 if(empty($errors)){
                     Register::fillOut($userId,$name,$lastname,$newlogin,$tel,$newpass);
+                    array_push($errors,'Данные успешно сохранены!');
                 }
         }
         return $errors;

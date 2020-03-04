@@ -13,8 +13,6 @@ class AjaxController{
 //    }
     public static function actionIndex()
     {
-//        $buyList = [];
-//        $tires = [];
         $finalTires = [];
         $finalDisks = [];
 
@@ -27,21 +25,27 @@ class AjaxController{
                 $finalDisks = $_SESSION['disks'];
             }
 
-            foreach ($_POST as $i => $value){
+            foreach($_POST as $i => $value){
+
                 if($i == 'tire'){
                     if(array_key_exists($value,$finalTires)){
                         $_SESSION['tires'][$value]++;
                     }else{
                         $_SESSION['tires'][$value] = 1;
                     }
-                }else{
+                }elseif($i == 'disk'){
                     if(array_key_exists($value,$finalDisks)){
                         $_SESSION['disks'][$value]++;
                     }else{
                         $_SESSION['disks'][$value] = 1;
                     }
+                }elseif($i == 'tireCl'){
+                    unset($_SESSION['tires'][$value]);
+                }elseif($i == 'diskCl'){
+                    unset($_SESSION['disks'][$value]);
                 }
             }
+
             if(isset($_SESSION['tires'])){
                 $tiresSum = array_sum($_SESSION['tires']);
             }
@@ -54,46 +58,12 @@ class AjaxController{
             if(empty($_SESSION['disks'])){
                 $disksSum = 0;
             }
+
             $_SESSION['count'] =  $tiresSum + $disksSum;
             echo $_SESSION['count'];
+//            print_r($_POST);
+//            print_r($_SESSION);
             die();
         }
     }
 }
-//class AjaxController{
-//    public static function count(){
-//        if(isset($_SESSION['buylist'])){
-//            $count = 0;
-//            foreach ($_SESSION['buylist'] as $id => $amount){
-//                $count += $amount;
-//            }
-//            return $count;
-//        }else{
-//            return 0;
-//        }
-//    }
-//    public static function actionIndex()
-//    {
-//        $buyList = [];
-//        if (strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-//            if(isset($_SESSION['buylist'])){
-//                $_SESSION['buylist'];
-//                $buyList = $_SESSION['buylist'];
-//            }
-//            $count = 0;
-//            foreach ($_POST as $i => $value){
-//                if(array_key_exists($i,$buyList)){
-//                    $_SESSION['buylist'][$i]++;
-//                }else{
-//                    $_SESSION['buylist'][$i] = 1;
-//                }
-//            }
-//            foreach ($_SESSION['buylist'] as $id => $amount){
-//                $count += $amount;
-//            }
-//            $_SESSION['count'] = $count;
-//            echo $count;
-//            die();
-//        }
-//    }
-//}
