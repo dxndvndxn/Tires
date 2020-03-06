@@ -17,8 +17,8 @@
     <div></div>
 
     <div class="article">
-        <?php if(!empty($tires)): ?>
-        <?php foreach ($tires as $value): ?>
+        <?php if(!empty($tires) && isset($tires[$page])): ?>
+        <?php foreach ($tires[$page] as $value): ?>
                 <div class="article-out">
                     <div class="wrap-img"><img src="template/img/tireone.png" alt=""></div>
                     <div class="article-description">
@@ -55,8 +55,8 @@
                     </div>
                 </div>
         <?php endforeach; ?>
-        <?php elseif(!empty($disks)): ?>
-        <?php foreach ($disks as $value): ?>
+        <?php elseif(!empty($disks) && !empty($disks[$page])): ?>
+        <?php foreach ($disks[$page] as $value): ?>
                 <div class="article-out">
                     <div class="wrap-img"><img src="template/img/tireone.png" alt=""></div>
                     <div class="article-description">
@@ -100,7 +100,7 @@
     <div></div>
 
     <div class="pagi-wrap">
-<!--        --><?php //echo $pagination->get(); ?>
+        <?php echo $pagination->get(); ?>
     </div>
 
     <div></div>

@@ -35,13 +35,16 @@ class SiteController{
         if(isset($_SESSION['user'])){
             $userInfo = Register::getInfo($_SESSION['user']);
         }
-
         $allList = ValuesForm::getAllProducts($page);
         require_once(ROOT . '/views/site/index.php');
         return true;
     }
 
-    public function actionOutputTire(){
+    public function actionOutput($page = 1){
+//        if($page == ""){
+//            $page = 1;
+//        }
+//        echo $page;
         $widthTire = ValuesForm::getTireWidth();
         $heightTire = ValuesForm::getTireHeight();
         $diametrTire = ValuesForm::getTireDiametr();
@@ -52,11 +55,19 @@ class SiteController{
         $DIA = ValuesForm::getDIA();
         $bolts = ValuesForm::getBolt();
         $takeoff = ValuesForm::getTakeoff();
-        $tires = ValuesForm::outputTires();
-        $disks = ValuesForm::outputDisks();
+        $tires = ValuesForm::outputTires($page);
+        $disks = ValuesForm::outputDisks($page);
         $userUp = User::SignUp();
         $userIn = User::SignIn();
         $userOut = User::LogOut();
+
+        $count = null;
+        if($tires[0] != 0){
+            $count = $tires[0];
+        }elseif($disks[0] != 0){
+            $count = $disks[0];
+        }
+        $pagination = new Pagination($count,$page,5,'');
         if(isset($_SESSION['user'])){
             $userInfo = Register::getInfo($_SESSION['user']);
         }

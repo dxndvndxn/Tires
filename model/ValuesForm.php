@@ -216,11 +216,16 @@ WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
         return $row[0] + $row2[0];
     }
     //Присылаем шины
-    public static function outputTires(){
+    public static function outputTires($page=1){
         $db = self::getConnect();
         foreach ($_GET as $name => $value){
             if($value == null){
                 $_GET[$name] = "'%'";
+            }elseif(preg_grep("/(\d)(?!\\[0-9]+)/",$_GET)){
+//                echo $name;
+//                echo $value;
+//                echo substr($value,0,1);
+               $_GET[$name] = substr($value,0,1);
             }
         }
         $tiresList = array();
@@ -242,16 +247,28 @@ WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
             }
         }
 
-        return $tiresList;
+        $lastList = array_fill(0,1,count($tiresList));
+        for($k = 0; $k < count($tiresList); $k++){
+            array_push($lastList,array_slice($tiresList,0,5));
+            array_splice($tiresList,0,5);
+        }
+        //Возвращаем массив , где в каждом ключе нужные данные для вывода на одну страницу
+        return $lastList;
 
     }
     //Присылаем диски
-    public static function outputDisks(){
+    public static function outputDisks($page = 1){
         $db = self::getConnect();
         foreach ($_GET as $name =>$value){
             if($value == null){
                 $_GET[$name] = "'%'";
             }
+//            elseif(preg_grep("/(\d)(?!\\[0-9]+)/",$_GET)){
+////                echo $name;
+////                echo $value;
+////                echo substr($value,0,1);
+////                $_GET[$name] = substr($value,0,1);
+//            }
         }
         $diskList = array();
         if(isset($_GET['width_disks']) && isset($_GET['takeoff']) && isset($_GET['diametr_disks']) && isset($_GET['dia']) && isset($_GET['bolt']) && isset($_GET['pcd'])) {
@@ -275,7 +292,13 @@ WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
                 array_push($diskList, $row);
             }
         }
-        return $diskList;
+        $lastList = array_fill(0,1,count($diskList));
+        for($k = 0; $k < count($diskList); $k++){
+            array_push($lastList,array_slice($diskList,0,5));
+            array_splice($diskList,0,5);
+        }
+        //Возвращаем массив , где в каждом ключе нужные данные для вывода на одну страницу
+        return $lastList;
     }
 
 }

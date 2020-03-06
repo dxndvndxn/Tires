@@ -150,3 +150,12 @@ for(let k = 0; k <selectDisk2.length; k++){
         }
     });
 }
+function easeMove(){
+    let top = $("#catalog").offset().top;
+    $('body,html').animate({scrollTop: top -100}, 1500);
+}
+let loc = window.location.href;
+if(loc.match(/[2-9]+/)){
+    easeMove()
+}
+
