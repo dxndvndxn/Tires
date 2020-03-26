@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f0cbf7-9f18-473b-b5a8-4f825b3e4cd7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/AdminDbChanges.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/js/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/scss/admin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/ValuesForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/ValuesForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/js/one.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/one.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/output/output.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/output/output.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,6 +123,22 @@
       <workItem from="1583359911224" duration="61000" />
       <workItem from="1583434597615" duration="11252000" />
       <workItem from="1583483146111" duration="19420000" />
+      <workItem from="1583599980585" duration="3249000" />
+      <workItem from="1583679740354" duration="16188000" />
+      <workItem from="1583831946380" duration="7916000" />
+      <workItem from="1583861189991" duration="21640000" />
+      <workItem from="1583998360606" duration="905000" />
+      <workItem from="1583999607386" duration="6826000" />
+      <workItem from="1584010612394" duration="19000" />
+      <workItem from="1584017835107" duration="284000" />
+      <workItem from="1584089042975" duration="11860000" />
+      <workItem from="1584105947783" duration="5715000" />
+      <workItem from="1584186424444" duration="123000" />
+      <workItem from="1584427062006" duration="2659000" />
+      <workItem from="1584534422391" duration="7433000" />
+      <workItem from="1584634119646" duration="16000" />
+      <workItem from="1585148639233" duration="173000" />
+      <workItem from="1585170944342" duration="144000" />
     </task>
     <servers />
   </component>

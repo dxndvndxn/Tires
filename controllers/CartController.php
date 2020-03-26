@@ -9,6 +9,7 @@ class CartController{
         $disks = User::productDisks();
         $totalPriceTire = User::totalPriceTires($tires);
         $totalPriceDisk = User::totalPriceDisks($disks);
+        //Забираем общий прайс за шины и диски
         if(isset($totalPriceTire)){
             $totalPriceTire = User::totalPriceTires($tires);
         }else{
@@ -20,8 +21,6 @@ class CartController{
             $totalPriceDisk = 0;
         }
         $commonTotal = $totalPriceTire + $totalPriceDisk;
-        print_r($_SESSION);
-        print_r($_POST);
         require_once('views/cart/cart.php');
         return true;
     }

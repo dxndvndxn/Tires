@@ -9,5 +9,6 @@ return array(
     'width_disks=([0-9]+|b*?)&diametr_disks=([0-9]+|b*?)&takeoff=([0-9]+|b*?)&dia=([0-9]+|b*?)&bolt=([0-9]+|b*?)&pcd=([0-9]+|b*?)' => 'site/output',
     '([0-9]+)' => 'site/index/$1',
     'cabinet' => 'cabinet/index',
+    'admin' => 'admin/index',
     '' => 'site/index'
 );

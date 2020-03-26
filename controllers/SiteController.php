@@ -25,9 +25,9 @@ class SiteController{
         $diametrDisk = ValuesForm::getDiskDiametr();
         $PCD = ValuesForm::getPCD();
         $DIA = ValuesForm::getDIA();
-        $total = ValuesForm::countTires();
         $bolts = ValuesForm::getBolt();
         $takeoff = ValuesForm::getTakeoff();
+        $total = ValuesForm::countTires();
         $pagination = new Pagination($total,$page,10,'');
         $userIn = User::SignIn();
         $userUp = User::SignUp();
@@ -62,6 +62,7 @@ class SiteController{
         $userOut = User::LogOut();
 
         $count = null;
+        //Узнаем колл-во шин и дисков по запросу юсера
         if($tires[0] != 0){
             $count = $tires[0];
         }elseif($disks[0] != 0){

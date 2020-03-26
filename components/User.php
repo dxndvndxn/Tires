@@ -150,7 +150,7 @@ class User{
                 if($newlogin == Register::checkIdForUpdate($userId)) {
                     Register::fillOut($userId,$name,$lastname,$newlogin,$tel,$newpass);
                 }elseif($newlogin != Register::checkIdForUpdate($userId) && Register::checkEmail($newlogin)){
-                    array_push($errors,  'Такой E-mail уже используется');
+                    array_push($errors,'Такой E-mail уже используется');
                 }
                 if(!Register::checkPass($newpass)){
                     array_push($errors,'Пароль должен быть более 8 символов.');
