@@ -29,7 +29,7 @@
             </div>
             <div class="add-descr">
                 <label for="description">Описание</label>
-                <input type="text" id="description" name="description">
+                <input type="text" id="description" name="description" form="search_tires">
             </div>
             <div class="add-name_amount">
                 <div class="add-name_amount_fields">
