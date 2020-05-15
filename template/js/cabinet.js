@@ -2,7 +2,15 @@
 
 let tabs = document.querySelector('.tabs');
 let desk = document.querySelector('.desk-content-in').children;
-
+let loc = window.location.href;
+if(loc.match(/(\/cart)/)){
+    desk[0].style.display= 'block';
+    tabs.children[0].classList.add('active-tab');
+    desk[1].style.display = 'none';
+    tabs.children[1].classList.add('nonactive-tab');
+    desk[2].style.display = 'none';
+    tabs.children[2].classList.add('nonactive-tab');
+}
 tabs.addEventListener('click',(e)=>{
     for(let i = 0;i < tabs.children.length;i++){
         if(e.target == tabs.children[i]){

@@ -1,7 +1,10 @@
 <?php
 include_once(ROOT . '/components/User.php');
-class CabinetController{
-    public function actionIndex(){
+
+class CabinetController
+{
+    public function actionIndex()
+    {
         $userId = Register::checkLogged();
         $userInfo = Register::getInfo($userId);
         $userOut = User::LogOut();

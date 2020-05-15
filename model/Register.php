@@ -112,6 +112,7 @@ class Register{
         $result->bindParam(':tel',$tel,PDO::PARAM_STR);
         $result->bindParam(':newpass',$newpass,PDO::PARAM_STR);
         return $result->execute();
+
     }
     //Заполняем карзину шинами
     public static function getTiresById($ids){
@@ -126,7 +127,7 @@ JOIN tire_diametr on catalog_tire.catalog_tire_diameter = tire_diametr.id
         $result = $db->query($sql);
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $i = 0;
-        while($row =$result->fetch()){
+        while($row = $result->fetch()){
             $products[$i]['tire_id'] = $row['tire_id'];
             $products[$i]['tire_width'] = $row['tire_width'];
             $products[$i]['height'] = $row['height'];

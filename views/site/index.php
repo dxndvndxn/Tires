@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="template/css/index.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Scada:400,700,700i&display=swap&subset=cyrillic" rel="stylesheet">
+<!--    <link rel="stylesheet" href="template/slick/slick.css">-->
+<!--    <link rel="stylesheet" href="template/slick/slick-theme.css">-->
+    <link rel="stylesheet" type="text/css" href="template/fancybox-master/dist/jquery.fancybox.min.css">
     <title>Главная</title>
 </head>
 <body>
@@ -21,7 +24,13 @@
         <?php foreach ($allList as $value): ?>
         <?php if(isset($value['catalog_tire_name'])): ?>
             <div class="article-out">
-                <div class="wrap-img"><img src="template/img/tireone.png" alt=""></div>
+                <div class="wrap-img">
+                    <?php foreach (explode(',',$value['catalog_tire_pics']) as $img):?>
+                        <a href="template/img/<?php echo $img?>" data-fancybox="gallery<?php echo $value['tire_id']?>t" data-caption="Caption #1">
+                            <img src="template/img/<?php echo $img?>" alt="" loading="auto">
+                        </a>
+                    <?php endforeach; ?>
+                </div>
                 <div class="article-description">
                     <div class="title">
                         <span class="name"><?php echo $value['catalog_tire_name'] ?></span>
@@ -57,7 +66,13 @@
             </div>
             <?php elseif(isset($value['catalog_diskov_name'])):?>
                 <div class="article-out">
-                    <div class="wrap-img"><img src="template/img/tireone.png" alt=""></div>
+                    <div class="wrap-img">
+                        <?php foreach (explode(',',$value['catalog_diskov_pics']) as $img):?>
+                            <a href="template/img/<?php echo $img?>" data-fancybox="gallery<?php echo $value['disk_id']?>d" data-caption="Caption #1">
+                                <img src="template/img/<?php echo $img?>" alt="" loading="auto">
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
                     <div class="article-description">
                         <div class="title">
                             <span class="name"><?php echo $value['catalog_diskov_name'] ?></span>
@@ -110,5 +125,7 @@
 <script src="template/js/scroll.js"></script>
 <script src="template/js/ajax.js"></script>
 <script src="template/js/forma.js"></script>
+<!--<script src="template/slick/slick.min.js"></script>-->
+<script src="template/fancybox-master/dist/jquery.fancybox.min.js"></script>
 </body>
 </html>

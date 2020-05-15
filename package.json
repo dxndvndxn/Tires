@@ -9,7 +9,8 @@
   "author": "Daniel V.",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "slick-carousel": "^1.8.1"
   },
   "dependencies": {
     "gulp-autoprefixer": "^7.0.1",

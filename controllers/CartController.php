@@ -9,6 +9,10 @@ class CartController{
         $disks = User::productDisks();
         $totalPriceTire = User::totalPriceTires($tires);
         $totalPriceDisk = User::totalPriceDisks($disks);
+        if(!User::isGest()){
+            $userId = Register::checkLogged();
+            $userInfo = Register::getInfo($userId);
+        }
         //Забираем общий прайс за шины и диски
         if(isset($totalPriceTire)){
             $totalPriceTire = User::totalPriceTires($tires);

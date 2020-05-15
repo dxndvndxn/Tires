@@ -148,19 +148,19 @@ class ValuesForm
         return $takeList;
     }
     //Получаем все товары на главную
-    public static function getAllProducts($page=1){
+    public static function getAllProducts($page = 1,$amount){
 
         $db = self::getConnect();
 
         //Запросы в базу на все записи
-        $tires = mysqli_query($db,"SELECT width AS tire_width,height,diametr AS tire_diametr,season,catalog_tire.catalog_tire_id AS tire_id,catalog_tire.catalog_tire_name,catalog_tire.price AS tire_price,catalog_tire.catalog_tire_description FROM tire_width 
+        $tires = mysqli_query($db,"SELECT width AS tire_width,height,diametr AS tire_diametr,season,catalog_tire.catalog_tire_id AS tire_id,catalog_tire.catalog_tire_name,catalog_tire.price AS tire_price,catalog_tire.catalog_tire_description,catalog_tire.catalog_tire_pics FROM tire_width 
 JOIN catalog_tire on tire_width.id = catalog_tire.catalog_tire_width
 JOIN tire_height on catalog_tire.catalog_tire_height = tire_height.id 
 JOIN tire_diametr on catalog_tire.catalog_tire_diameter = tire_diametr.id 
 JOIN tire_season on catalog_tire.catalog_tire_season = tire_season.id
  WHERE available = 1 ORDER by catalog_tire.catalog_tire_id DESC");
 
-        $disks = mysqli_query($db,'SELECT width AS disk_width,diametr AS disk_diametr,takeoff,bolt_amount,pcd,dia,catalog_diskov.catalog_diskov_id AS disk_id,catalog_diskov.catalog_diskov_name,catalog_diskov.catalog_diskov_description,catalog_diskov.price AS disk_price FROM disk_width 
+        $disks = mysqli_query($db,'SELECT width AS disk_width,diametr AS disk_diametr,takeoff,bolt_amount,pcd,dia,catalog_diskov.catalog_diskov_id AS disk_id,catalog_diskov.catalog_diskov_name,catalog_diskov.catalog_diskov_description,catalog_diskov.price AS disk_price,catalog_diskov.catalog_diskov_pics FROM disk_width 
 JOIN catalog_diskov ON disk_width.id = catalog_diskov.catalog_diskov_width 
 JOIN disk_diametr ON catalog_diskov.catalog_diskov_diametr = disk_diametr.id 
 JOIN disk_takeoff ON catalog_diskov.catalog_diskov_takeoff = disk_takeoff.id 
@@ -170,8 +170,6 @@ JOIN dia ON catalog_diskov.catalog_diskov_dia = dia.id
 WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
 
         $commonList = array();
-        $shuffList = array();
-        $lastList = array();
         //Пушим данные из БД в массив
         $i = 0;
         while ($row = mysqli_fetch_array($tires)){
@@ -195,11 +193,16 @@ WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
 //             array_push($lastList,array_slice($shuffList,0,10));
 //             array_splice($shuffList,0,10);
 //         }
+//        print_r($commonList);
         $lastList = array_fill(0,1,'');
-
+//        print_r($lastList);
          for($k = 0; $k < count($commonList); $k++){
-             array_push($lastList,array_slice($commonList,0,10));
-             array_splice($commonList,0,10);
+             array_push($lastList,array_slice($commonList,0,$amount));
+             array_splice($commonList,0,$amount);
+             if(count($commonList) < $amount){
+                 array_push($lastList,array_slice($commonList,0,count($commonList)));
+                 array_splice($commonList,0,count($commonList));
+             }
          }
          //Возвращаем массив , где в каждом ключе нужные данные для вывода на одну страницу
         return $lastList[$page];
@@ -215,18 +218,27 @@ WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
         $row2 = mysqli_fetch_array($countDisks);
         return $row[0] + $row2[0];
     }
+
     //Присылаем шины
     public static function outputTires($page=1){
         $db = self::getConnect();
         foreach ($_GET as $name => $value){
+
             if($value == null){
                 $_GET[$name] = "'%'";
-            }elseif(preg_grep("/(\d)(?!\\[0-9]+)/",$_GET)){
-//                echo $name;
-//                echo $value;
-//                echo substr($value,0,1);
-               $_GET[$name] = substr($value,0,1);
+            }elseif (preg_match("~([\\/])~", $value)) {
+
+                if(preg_match("~([0-9][\\/])~", $value)){
+                    $_GET[$name] = substr($value,0,1);
+                }elseif (preg_match("~([\\/][0-9])~", $value)){
+                    $_GET[$name] = "'%'";
+                }
             }
+//            elseif(preg_grep("/(\d)(?!\\[0-9]+)/",$_GET)){
+//               $_GET[$name] = substr($value,0,1);
+//            }
+
+//            echo $value . '<br>';
         }
         $tiresList = array();
         if(isset($_GET['width_tire']) && isset($_GET['height']) && isset($_GET['diametr_tire']) && isset($_GET['season'])){
@@ -235,15 +247,15 @@ WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
             $diametr = $_GET['diametr_tire'];
             $season = $_GET['season'];
 
-            $query = mysqli_query($db, "SELECT width,height,diametr,season,catalog_tire.catalog_tire_id AS tire_id,catalog_tire.catalog_tire_name,catalog_tire.price,catalog_tire.catalog_tire_description FROM tire_width
+            $query = mysqli_query($db, "SELECT width,height,diametr,season,catalog_tire.catalog_tire_id AS tire_id,catalog_tire.catalog_tire_name,catalog_tire.price,catalog_tire.catalog_tire_description,catalog_tire.catalog_tire_pics FROM tire_width
         JOIN catalog_tire on tire_width.id = catalog_tire.catalog_tire_width
         JOIN tire_height on catalog_tire.catalog_tire_height = tire_height.id
         JOIN tire_diametr on catalog_tire.catalog_tire_diameter = tire_diametr.id
         JOIN tire_season on catalog_tire.catalog_tire_season = tire_season.id
-        WHERE catalog_tire_width LIKE $width AND catalog_tire_height LIKE $height AND catalog_tire_diameter LIKE $diametr AND catalog_tire_season LIKE $season ORDER BY catalog_tire.catalog_tire_id DESC;");
+        WHERE catalog_tire_width LIKE $width AND catalog_tire_height LIKE $height AND catalog_tire_diameter LIKE $diametr AND catalog_tire_season LIKE $season AND available = 1 ORDER BY catalog_tire.catalog_tire_id DESC;");
 
             while($row = mysqli_fetch_array($query)){
-                array_push($tiresList,$row);
+                array_push($tiresList, $row);
             }
         }
 
@@ -251,24 +263,30 @@ WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
         for($k = 0; $k < count($tiresList); $k++){
             array_push($lastList,array_slice($tiresList,0,5));
             array_splice($tiresList,0,5);
+            if(count($tiresList) < 5){
+                array_push($lastList,array_slice($tiresList,0,count($tiresList)));
+                array_splice($tiresList,0,count($tiresList));
+            }
         }
         //Возвращаем массив , где в каждом ключе нужные данные для вывода на одну страницу
         return $lastList;
 
     }
+
     //Присылаем диски
     public static function outputDisks($page = 1){
         $db = self::getConnect();
         foreach ($_GET as $name =>$value){
             if($value == null){
                 $_GET[$name] = "'%'";
+            }elseif (preg_match("~([\\/])~", $value)) {
+
+                if(preg_match("~([0-9][\\/])~", $value)){
+                    $_GET[$name] = substr($value,0,1);
+                }elseif (preg_match("~([\\/][0-9])~", $value)){
+                    $_GET[$name] = "'%'";
+                }
             }
-//            elseif(preg_grep("/(\d)(?!\\[0-9]+)/",$_GET)){
-////                echo $name;
-////                echo $value;
-////                echo substr($value,0,1);
-////                $_GET[$name] = substr($value,0,1);
-//            }
         }
         $diskList = array();
         if(isset($_GET['width_disks']) && isset($_GET['takeoff']) && isset($_GET['diametr_disks']) && isset($_GET['dia']) && isset($_GET['bolt']) && isset($_GET['pcd'])) {
@@ -279,14 +297,14 @@ WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
             $bolt = $_GET['bolt'];
             $pcd = $_GET['pcd'];
 
-            $query = mysqli_query($db, "SELECT width,diametr,takeoff,dia,bolt_amount,pcd,catalog_diskov.catalog_diskov_id AS disk_id,catalog_diskov.catalog_diskov_name,catalog_diskov.price,catalog_diskov.catalog_diskov_description FROM disk_width 
+            $query = mysqli_query($db, "SELECT width,diametr,takeoff,dia,bolt_amount,pcd,catalog_diskov.catalog_diskov_id AS disk_id,catalog_diskov.catalog_diskov_name,catalog_diskov.price,catalog_diskov.catalog_diskov_description,catalog_diskov.catalog_diskov_pics FROM disk_width 
             JOIN catalog_diskov on disk_width.id = catalog_diskov.catalog_diskov_width 
             JOIN disk_diametr on catalog_diskov.catalog_diskov_diametr = disk_diametr.id 
             JOIN disk_takeoff on catalog_diskov.catalog_diskov_takeoff = disk_takeoff.id 
             JOIN dia on catalog_diskov.catalog_diskov_dia = dia.id 
             JOIN disk_bolt_amount on catalog_diskov.catalog_diskov_bolt_amount = disk_bolt_amount.id 
             JOIN pcd on catalog_diskov.catalog_diskov_pcd = pcd.id 
-            WHERE catalog_diskov_width LIKE $width AND catalog_diskov_diametr LIKE $diametr AND catalog_diskov_takeoff LIKE $takeoff AND catalog_diskov_dia LIKE $dia AND catalog_diskov_bolt_amount LIKE $bolt AND catalog_diskov_pcd LIKE $pcd ORDER BY catalog_diskov.catalog_diskov_id DESC;");
+            WHERE catalog_diskov_width LIKE $width AND catalog_diskov_diametr LIKE $diametr AND catalog_diskov_takeoff LIKE $takeoff AND catalog_diskov_dia LIKE $dia AND catalog_diskov_bolt_amount LIKE $bolt AND catalog_diskov_pcd LIKE $pcd AND available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC;");
 
             while ($row = mysqli_fetch_array($query)) {
                 array_push($diskList, $row);
@@ -296,6 +314,10 @@ WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
         for($k = 0; $k < count($diskList); $k++){
             array_push($lastList,array_slice($diskList,0,5));
             array_splice($diskList,0,5);
+            if(count($diskList) < 5){
+                array_push($lastList,array_slice($diskList,0,count($diskList)));
+                array_splice($diskList,0,count($diskList));
+            }
         }
         //Возвращаем массив , где в каждом ключе нужные данные для вывода на одну страницу
         return $lastList;

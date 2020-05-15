@@ -8,7 +8,7 @@ if(total.value.length <= 2){
 cards.addEventListener('click',function (e) {
     let datPlus = e.target;
     //Если нажали на плюс
-    if(datPlus.classList.contains('add')){
+    if(datPlus.classList.contains('add') || datPlus.classList.contains('plus')){
         //Родитель плюса
         let parentPlus = datPlus.parentNode;
         //Родитель родителя плюса

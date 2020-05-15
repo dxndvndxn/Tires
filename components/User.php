@@ -2,7 +2,6 @@
 include_once (ROOT . '/model/Register.php');
 class User{
 
-
     //Регеаем
     public static function SignUp(){
         $errors = [];
@@ -45,8 +44,13 @@ class User{
             if($userId == false){
                 array_push($errors,'Неправильный логин или пароль');
             }else{
-                Register::Auth($userId);
-                header("Location: /cabinet");
+                if($userId == 10){
+                    Register::Auth($userId);
+                    header("Location: /admin");
+                }else{
+                    Register::Auth($userId);
+                    header("Location: /cabinet");
+                }
             }
         }
         return $errors;
@@ -71,7 +75,7 @@ class User{
         }else{
             return true;
         }
-}
+    }
 
     public static function getTiresBuyList(){
         if(isset($_SESSION['tires'])){
@@ -87,10 +91,10 @@ class User{
             return false;
         }
     }
-    //Получаем шины выбранных покупак ивозращаем данные
+    //Получаем шины выбранных покупак и возращаем данные
     public static function productTires(){
         $productTires = self::getTiresBuyList();
-        $getArticles;
+//        $getArticles;
         if($productTires){
             $tiresIds = array_keys($productTires);
             $getArticles = Register::getTiresById($tiresIds);
@@ -99,10 +103,10 @@ class User{
             return $getArticles;
         }
     }
-    //Получаем диски выбранных покупак ивозращаем данные
+    //Получаем диски выбранных покупак и возращаем данные
     public static function productDisks(){
         $productDisks = self::getDisksBuyList();
-        $getArticles;
+//        $getArticles;
         if($productDisks){
             $disksIds = array_keys($productDisks);
             $getArticles = Register::getDisksById($disksIds);
@@ -149,6 +153,8 @@ class User{
                 $newpass = htmlentities(trim($_POST['newpass']));
                 if($newlogin == Register::checkIdForUpdate($userId)) {
                     Register::fillOut($userId,$name,$lastname,$newlogin,$tel,$newpass);
+                    $url = $_SERVER['REQUEST_URI'];
+                    header("Location: $url");
                 }elseif($newlogin != Register::checkIdForUpdate($userId) && Register::checkEmail($newlogin)){
                     array_push($errors,'Такой E-mail уже используется');
                 }
