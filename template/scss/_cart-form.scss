@@ -1,0 +1,198 @@
+form{
+  height: 100%;
+  font-weight: 700;
+  .cards{
+    border-bottom: 2px solid $paleGrey;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    .article{
+      display: flex;
+      justify-content: space-between;
+      &:not(:last-child){
+        padding-bottom: 3px;
+      }
+      .order{
+        width: 75%;
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        font-size: 20px;
+        padding: 16px 27px;
+        margin-right: 3%;
+        .title{
+          margin: auto 0;
+          width: 70%;
+        }
+        .amount{
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          width: 30%;
+          input{
+            border: none;
+            background: none;
+            color: $darkGrey;
+            width: 20%;
+
+          }
+          .minus{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            span{
+              width: 16px;
+              height: 6px;
+              background-color: $paleGrey;
+              display: inline-flex;
+              cursor: pointer;
+            }
+          }
+          .plus{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-left: 8%;
+            cursor: pointer;
+            span{
+              width: 16px;
+              height: 6px;
+              background-color: $paleGrey;
+              display: inline-flex;
+              &:nth-child(2){
+                position: absolute;
+                top: 39%;
+                left: 5.5%;
+                transform: rotate(90deg);
+              }
+            }
+          }
+        }
+      }
+      .price{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 28px;
+        width: 22%;
+        input{
+          background:none;
+          border: none;
+          font-weight: 700;
+          width: 100px;
+          color: $darkGrey;
+        }
+        .close{
+          display: flex;
+          padding: 0;
+          cursor: pointer;
+          span{
+            width: 16px;
+            height: 6px;
+            background-color: $paleGrey;
+            &:nth-child(1){
+              transform: rotate(-45deg);
+              right: -50%;
+              position: relative;
+            }
+            &:nth-child(2){
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  .wrap-btn{
+    margin-bottom: 60px;
+    input{
+      border: none;
+      &:nth-child(1){
+        font-size: 30px;
+        font-weight: 700;
+        color: $darkGrey;
+        background: none;
+        width: 110px;
+      }
+    }
+    span{
+      font-size: 30px;
+    }
+  }
+  .form-fill{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    .radios{
+      display: flex;
+      justify-content: space-between;
+      input{
+        appearance: none;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        border: 2px solid #000;
+        cursor: pointer;
+      }
+      label{
+        vertical-align: top;
+        font-size: 20px;
+        &:nth-child(2){
+          border-right: 3px solid #000;
+          padding-right: 15px;
+        }
+      }
+    }
+    .delivery-fill{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      p{
+        margin: 0;
+        font-weight: normal;
+      }
+      .radios{
+        width: 34%;
+      }
+    }
+    input[type='text'],input[type='tel'],input[type='email']{
+      background-color: #fff;
+      border: none;
+      width: 100%;
+      font-size: 20px;
+      height: 50px;
+      padding: 15px 35px;
+      box-sizing: border-box;
+    }
+    input::placeholder{
+      font-size: 20px;
+      font-family: 'Scada', sans-serif;
+    }
+    input[type='submit']{
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      width: 100%;
+      height: 50px;
+      background: $pink;
+      border: none;
+      padding: 15px 25px;
+      cursor: pointer;
+    }
+    .payment-fill{
+      margin: 45px 0 16px;
+      .radios{
+        width: 65%;
+      }
+    }
+    .data-fill{
+      display: flex;
+      justify-content: space-between;
+      input{
+        &:not(:last-child){
+          margin-right: 1%;
+        }
+      }
+    }
+  }
+}

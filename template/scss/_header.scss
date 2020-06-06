@@ -12,12 +12,16 @@
   display: grid;
   grid-template-columns: 1fr 924px 1fr;
 }
+
 $pink: #e32636;
 $paleGrey: #9c9c9c;
 $midGrey: #363636;
 $darkGrey: #1c1c1c;
 .grid{
   @extend %repeat-grid;
+}
+.activeLink{
+  color: $pink;
 }
 .valid{
   border: 1px solid green !important;

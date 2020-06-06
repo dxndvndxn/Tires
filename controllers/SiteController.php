@@ -38,7 +38,7 @@ class SiteController
 
         //Пагинация
         $pagination = new Pagination($total,$page,10,'');
-
+        
         require_once(ROOT . '/views/site/index.php');
         return true;
     }

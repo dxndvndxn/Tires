@@ -42,8 +42,8 @@
     <div></div>
 </div>
 <?php include_once('views/layouts/footer.php') ?>
+<script src="template/js/_vars.js"></script>
 <script src="template/js/scroll.js"></script>
-<script src="template/js/forma.js"></script>
 <script src="template/js/cabinet.js"></script>
 </body>
 </html>

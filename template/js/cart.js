@@ -90,6 +90,11 @@ cards.addEventListener('click',function (e) {
         }
         //Ремувим товар
         parentPrice.parentNode.remove();
+
+        if (cards.children.length == 0){
+            $('.form-fill').hide();
+            wrapBtn.style.marginTop = '0px';
+        }
     }
 });
 
@@ -124,5 +129,33 @@ $(document).ready(function () {
                 }
             });
         }
+        if ($('.cards').length < 2){
+            wrapBtn.style.marginTop = '51px';
+        }else{
+            wrapBtn.style.marginTop = '0px';
+        }
+    });
+});
+let wrapBtn = document.querySelector('.wrap-btn');
+
+
+(cards.children.length < 2) ? wrapBtn.style.marginTop = '51px' : wrapBtn.style.marginTop = '0px';
+
+let radios = document.querySelectorAll('.radios input');
+
+radios.forEach((el,i) =>{
+
+    el.addEventListener('change',() =>{
+
+        el.style.backgroundColor = '#000';
+
+        for (let radio of radios){
+
+            if (!radio.checked){
+                radio.style.backgroundColor = 'transparent';
+            }
+
+        }
+
     });
 });

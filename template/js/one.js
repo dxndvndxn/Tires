@@ -154,8 +154,16 @@ function easeMove(){
     let top = $("#catalog").offset().top;
     $('body,html').animate({scrollTop: top -100}, 1500);
 }
-let loc = window.location.href;
+// let loc = window.location.href;
+// let navLinks = document.querySelectorAll('nav ul a');
+
 if(loc.match(/[2-9]+/)){
     easeMove()
+    navLinks[0].classList.add('activeLink');
 }
+
+
+
+
+
 

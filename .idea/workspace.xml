@@ -2,52 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f0cbf7-9f18-473b-b5a8-4f825b3e4cd7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/template/slick/ajax-loader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/config.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/fonts/slick.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/fonts/slick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/fonts/slick.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/fonts/slick.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/slick-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/slick-theme.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/slick-theme.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/slick.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/slick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/slick.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/slick.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/slick/slick.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/js/_vars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/scss/tirefit.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CabinetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CabinetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/StorageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StorageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AdminDbChanges.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/AdminDbChanges.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/ValuesForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/ValuesForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/TireFitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/TireFitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/css/article.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/article.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/css/cabinet.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/cabinet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/cart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/js/cabinet.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/cabinet.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/js/forma.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/forma.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/js/one.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/one.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/js/scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/template/js/scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/scss/_cart-form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/_cart-form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/scss/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/scss/admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/admin.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/scss/article.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/article.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/scss/cabinet.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/cabinet.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/scss/cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/cart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/scss/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/template/scss/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cart/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cart/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/cabinet/cabinet.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cabinet/cabinet.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/layouts/repeatcart.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/repeatcart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/output/output.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/output/output.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/tirefit/tirefit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/tirefit/tirefit.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +51,9 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Tires" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -197,6 +178,9 @@
       <workItem from="1588583921597" duration="18484000" />
       <workItem from="1588959518045" duration="19000" />
       <workItem from="1589478401173" duration="13383000" />
+      <workItem from="1591111953279" duration="2863000" />
+      <workItem from="1591184286599" duration="20321000" />
+      <workItem from="1591275498210" duration="15247000" />
     </task>
     <servers />
   </component>

@@ -1,23 +1,31 @@
 'use strict';
+
 let signIn = document.querySelector('#in');
 let signUp = document.querySelector('#up');
 let forma = document.querySelector('#up_in');
 let close = document.querySelector('.close');
 let submt = document.querySelector("input[type='submit']");
-//По клику войти
-    signIn.addEventListener('click',()=>{
-        for(let i = 0; i < forma.children.length;i++){
-            if(forma[i].classList.contains('signIn')){
-                forma[i].style.display = 'block';
-                close.style.display = 'block';
-                submt.setAttribute('value','Вход');
-                submt.setAttribute('name','in');
-            }else{
-                forma[i].style.display = 'none';
-            }
-        }
-    });
 
+//По клику войти
+//     if (typeof signIn == 'null') {
+//     // если попали сюда, то переменная существует
+//         console.log(1)
+//
+//     }else {
+//         console.log(2)
+//     }
+signIn.addEventListener('click',()=>{
+    for(let i = 0; i < forma.children.length;i++){
+        if(forma[i].classList.contains('signIn')){
+            forma[i].style.display = 'block';
+            close.style.display = 'block';
+            submt.setAttribute('value','Вход');
+            submt.setAttribute('name','in');
+        }else{
+            forma[i].style.display = 'none';
+        }
+    }
+});
 //По клику зарегаться
 signUp.addEventListener('click',()=>{
     for(let i = 0; i < forma.children.length;i++){

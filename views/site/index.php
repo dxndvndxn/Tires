@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="template/css/index.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Scada:400,700,700i&display=swap&subset=cyrillic" rel="stylesheet">
-<!--    <link rel="stylesheet" href="template/slick/slick.css">-->
-<!--    <link rel="stylesheet" href="template/slick/slick-theme.css">-->
     <link rel="stylesheet" type="text/css" href="template/fancybox-master/dist/jquery.fancybox.min.css">
     <title>Главная</title>
 </head>
@@ -121,10 +119,13 @@
 </div>
 
 <?php include_once('views/layouts/footer.php') ?>
+<script src="template/js/_vars.js"></script>
 <script src="template/js/one.js"></script>
 <script src="template/js/scroll.js"></script>
 <script src="template/js/ajax.js"></script>
-<script src="template/js/forma.js"></script>
+<?php if(User::isGest()): ?>
+    <script src="template/js/forma.js"></script>
+<?php endif; ?>
 <!--<script src="template/slick/slick.min.js"></script>-->
 <script src="template/fancybox-master/dist/jquery.fancybox.min.js"></script>
 </body>

@@ -33,6 +33,7 @@ gulp.task('scss',function (done) {
             remove: true
         }))
         .pipe(stripCssComments())
+        .on('error', sass.logError)
         .pipe(gulp.dest(path.build.scss));
     done();
 });
