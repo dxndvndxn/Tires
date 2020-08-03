@@ -147,6 +147,7 @@ class ValuesForm
         }
         return $takeList;
     }
+
     //Получаем все товары на главную
     public static function getAllProducts($page = 1,$amount){
 
@@ -208,6 +209,7 @@ WHERE available = 1 ORDER BY catalog_diskov.catalog_diskov_id DESC');
         return $lastList[$page];
 
     }
+
     //Получаем кол-во записей на главеую
     public static function countTires(){
         $db = self::getConnect();

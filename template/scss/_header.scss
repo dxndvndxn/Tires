@@ -96,6 +96,7 @@ header{
             display: inline-flex;
             justify-content: center;
             align-items: center;
+            color: #fff;
           }
         }
       }
@@ -194,6 +195,7 @@ header{
         &:last-child{
           background-color: $pink;
           color: #fff;
+          cursor: pointer;
         }
       }
     }

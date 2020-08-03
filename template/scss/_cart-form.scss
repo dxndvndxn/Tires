@@ -22,6 +22,13 @@ form{
         .title{
           margin: auto 0;
           width: 70%;
+          input{
+            width: 0%;
+            color: transparent;
+            background-color: transparent;
+            opacity: 0;
+            border: none;
+          }
         }
         .amount{
           display: flex;

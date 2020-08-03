@@ -1,6 +1,6 @@
 <?php
 include_once(ROOT . '/components/User.php');
-
+include_once (ROOT . '/model/SentOrder');
 class CabinetController
 {
     public function actionIndex()

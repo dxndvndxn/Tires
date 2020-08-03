@@ -91,6 +91,12 @@ $darkGrey: #1c1c1c;
               color: #fff;
               height: 2.3125rem;
               box-sizing: border-box;
+              a{
+                text-decoration: none;
+                width: 100%;
+                display: inline-block;
+                color: #fff;
+              }
             }
           }
         }

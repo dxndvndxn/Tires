@@ -1,7 +1,8 @@
 <?php
 include_once(ROOT . '/components/User.php');
+include_once (ROOT . '/model/SentOrder');
 class CartController{
-    function actionOpen(){
+    public function actionOpen(){
         $userUp = User::SignUp();
         $userIn = User::SignIn();
         $userOut = User::LogOut();
@@ -25,6 +26,8 @@ class CartController{
             $totalPriceDisk = 0;
         }
         $commonTotal = $totalPriceTire + $totalPriceDisk;
+        print_r($_POST);
+        SentOrder::Checkout();
         require_once('views/cart/cart.php');
         return true;
     }

@@ -188,17 +188,39 @@
         </div>
         <div class="treatment">
             <h1>Заказы в обработке</h1>
-            <div class="wrap-order">
-                <div class="order">
-                    <span class="name">Илья Налимов, </span>
-                    <span class="tel">+79116436374, </span>
-                    <span class="mail">ilyanalimov@ya.ru, </span>
-                    <span class="article-name">ContiSportContact™5 б/у, </span>
-                    <span class="amount">4шт, </span>
-                    <span class="total">34332 ₽ </span>
+            <form action="" method="post">
+                <div class="wrap-order">
+                    <div class="order">
+                        <span class="name">Илья Налимов, </span>
+                        <span class="tel">+79116436374, </span>
+                        <span class="mail">ilyanalimov@ya.ru, </span>
+                        <span class="article-name">ContiSportContact™5 б/у, </span>
+                        <span class="amount">4шт, </span>
+                        <span class="total">34332 ₽ </span>
+                    </div>
+                    <div class="delete-order">
+                        <input type="checkbox" name="CompleteProduct[]" value="11" class="Complete">
+                        <div class="wrap_cancel"><input type="checkbox" name="CancelProduct[]" value="12" class="Cancel" disabled></div>
+                    </div>
                 </div>
-                <div class="dele-order"></div>
-            </div>
+                <div class="wrap-order">
+                    <div class="order">
+                        <span class="name">Илья Налимов, </span>
+                        <span class="tel">+79116436374, </span>
+                        <span class="mail">ilyanalimov@ya.ru, </span>
+                        <span class="article-name">ContiSportContact™5 б/у, </span>
+                        <span class="amount">4шт, </span>
+                        <span class="total">34332 ₽ </span>
+                    </div>
+                    <div class="delete-order">
+                        <input type="checkbox" name="CompleteProduct[]" value="21" class="Complete">
+                        <div class="wrap_cancel"><input type="checkbox" name="CancelProduct[]" value="22" class="Cancel" disabled></div>
+                    </div>
+                </div>
+                <div class="wrap_sub">
+                    <input type="submit" name="change_order_status" class="delete-dtn" value="Завершить заказ">
+                </div>
+            </form>
         </div>
     </div>
 </div>

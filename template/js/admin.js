@@ -123,7 +123,7 @@ inputImg.addEventListener('change',()=>{
 //Блок удаления товара
 let btns = document.querySelectorAll('.delete');
 
-for(let i = 0; i < btns.length; i++){
+for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click',function (e) {
         if(e.target === btns[i]){
             btns[i].classList.toggle('activeDeleteBtn');
@@ -134,5 +134,45 @@ for(let i = 0; i < btns.length; i++){
             }
         }
     })
+}
+
+let cancels = document.querySelectorAll('.wrap_cancel');
+
+for (let cancel of cancels) {
+
+    cancel.addEventListener('click', (e) => {
+
+        console.log(e.target)
+        cancel.classList.toggle('cancelRed');
+
+        if (cancel.children[0].checked){
+
+            cancel.children[0].removeAttribute('checked');
+            cancel.children[0].setAttribute('disabled','');
+            return;
+
+        }
+
+        cancel.children[0].setAttribute('checked','');
+        cancel.children[0].removeAttribute('disabled');
+        cancel.previousElementSibling.classList.remove('CompleteBlu');
+        cancel.previousElementSibling.checked = false;
+    });
+
+}
+
+let completes = document.querySelectorAll('.Complete');
+
+for (let compl of completes) {
+
+    compl.addEventListener('click', () =>{
+
+        compl.classList.toggle('CompleteBlu');
+
+        compl.nextElementSibling.classList.remove('cancelRed');
+        compl.nextElementSibling.children[0].removeAttribute('checked');
+
+    });
+
 }
 

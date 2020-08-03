@@ -1,5 +1,6 @@
 <?php
 include_once(ROOT . '/components/Db.php');
+
 class AdminDbChanges
 {
     public $description;
@@ -101,6 +102,7 @@ class AdminDbChanges
             header("Location: http://localhost/admin");
         }
     }
+
     public static function deleteItem(){
         $db = Db::getCon();
         $url = $_SERVER['REQUEST_URI'];
@@ -140,6 +142,10 @@ class AdminDbChanges
         }else{
             return false;
         }
+    }
+
+    public static function ChangeOrderStatus(){
+
     }
 }
 

@@ -3,45 +3,45 @@
 
     <div class="real_form">
         <div class="legends">
-            <div id="tire">Шины</div>
-            <div id="disk">Диски</div>
+            <div id="tire" class="active">Шины</div>
+            <div id="disk" class="notActive">Диски</div>
         </div>
         <div class="form_wrap">
             <div class="labels">
-                <div>Подбор шин по автомобилю</div>
-                <div>Подбор дисков по автомобилю</div>
-                <div>Подбор шин по параметрам</div>
+                <div class="addBorder">Подбор шин по параметрам</div>
                 <div>Подбор дисков по параметрам</div>
             </div>
             <div class="selects_wrap">
-                <form action="#" class="form_for_car" id="search_tire_by_car" autocomplete="off">
-                    <select name="carname_tire">
-                        <option value="">Марка</option>
-                    </select>
-                    <select name="carmodel_tire">
-                        <option value="">Модель</option>
-                    </select>
-                    <select name="caryear_tire">
-                        <option value="">Год</option>
-                    </select>
-                    <select name="carseries_tire">
-                        <option value="">Модификация</option>
-                    </select>
-                </form>
-                <form action="#" class="form_for_car" id="search_disk_by_car" autocomplete="off">
-                    <select name="carname_disk">
-                        <option value="">Марка</option>
-                    </select>
-                    <select name="carmodel_disk">
-                        <option value="">Модель</option>
-                    </select>
-                    <select name="caryear_disk">
-                        <option value="">Год</option>
-                    </select>
-                    <select name="carseries_disk">
-                        <option value="">Модификация</option>
-                    </select>
-                </form>
+
+<!--                <form action="#" class="form_for_car" id="search_tire_by_car" autocomplete="off">-->
+<!--                    <select name="carname_tire">-->
+<!--                        <option value="">Марка</option>-->
+<!--                    </select>-->
+<!--                    <select name="carmodel_tire">-->
+<!--                        <option value="">Модель</option>-->
+<!--                    </select>-->
+<!--                    <select name="caryear_tire">-->
+<!--                        <option value="">Год</option>-->
+<!--                    </select>-->
+<!--                    <select name="carseries_tire">-->
+<!--                        <option value="">Модификация</option>-->
+<!--                    </select>-->
+<!--                </form>-->
+<!--                <form action="#" class="form_for_car" id="search_disk_by_car" autocomplete="off">-->
+<!--                    <select name="carname_disk">-->
+<!--                        <option value="">Марка</option>-->
+<!--                    </select>-->
+<!--                    <select name="carmodel_disk">-->
+<!--                        <option value="">Модель</option>-->
+<!--                    </select>-->
+<!--                    <select name="caryear_disk">-->
+<!--                        <option value="">Год</option>-->
+<!--                    </select>-->
+<!--                    <select name="carseries_disk">-->
+<!--                        <option value="">Модификация</option>-->
+<!--                    </select>-->
+<!--                </form>-->
+
                 <form action="#" class="form_for_characteristics" id="search_tires" autocomplete="off">
                     <select name="width_tire">
                         <option value="">Ширина</option>

@@ -1,6 +1,14 @@
 @import "header";
 @import "footer";
-
+%centerTd{
+  tr{
+    td{
+      &:not(:first-child){
+        text-align: center;
+      }
+    }
+  }
+}
 @mixin chooseCenter($position){
   @if $position == thead {
     tr{

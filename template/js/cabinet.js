@@ -168,12 +168,19 @@ let wrapBtn = document.querySelector('.wrap-btn');
 (cards.children.length < 2) ? wrapBtn.style.marginTop = '51px' : wrapBtn.style.marginTop = '0px';
 
 let radios = document.querySelectorAll('.radios input');
+let adress = document.getElementById('adress');
 
 radios.forEach((el,i) =>{
 
     el.addEventListener('change',() =>{
 
         el.style.backgroundColor = '#000';
+
+        if (el === radios[0]){
+            adress.value = '';
+        }else if(el === radios[1]){
+            adress.value = 'Кантемировская 39В';
+        }
 
         for (let radio of radios){
 
@@ -184,4 +191,21 @@ radios.forEach((el,i) =>{
         }
 
     });
+});
+
+let submitCart = document.getElementById('submitCart');
+let amountOfArticle = document.querySelectorAll('.amount input');
+
+submitCart.addEventListener('click', (e) => {
+
+    this.onsubmit = function () {
+
+        total.removeAttribute('disabled');
+
+        for ( let inp of amountOfArticle ){
+
+            inp.removeAttribute('disabled');
+
+        }
+    };
 });

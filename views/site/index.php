@@ -58,7 +58,7 @@
                                 echo "В корзину <img src=\"https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png\"";
                             } ?>
                         </button>
-                        <button data-id="<?php echo $value['tire_id']?>">Купить в 1 клик</button>
+                        <button class="buy tire" data-id="<?php echo $value['tire_id']?>" <?php if(isset($_SESSION['tires'][$value['tire_id']])){echo 'disabled';} ?>><a href="/cart">Купить в 1 клик</a></button>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                                     echo "В корзину <img src=\"https://img.icons8.com/pastel-glyph/100/000000/shopping-cart--v1.png\"";
                                 } ?>
                             </button>
-                            <button data-id="<?php echo $value['disk_id']?>">Купить в 1 клик</button>
+                            <button class="buy disk" data-id="<?php echo $value['disk_id']?>" <?php if(isset($_SESSION['disks'][$value['disk_id']])){echo 'disabled';} ?>><a href="/cart">Купить в 1 клик</a></button>
                         </div>
                     </div>
                 </div>

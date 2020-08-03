@@ -7,13 +7,7 @@ let close = document.querySelector('.close');
 let submt = document.querySelector("input[type='submit']");
 
 //По клику войти
-//     if (typeof signIn == 'null') {
-//     // если попали сюда, то переменная существует
-//         console.log(1)
-//
-//     }else {
-//         console.log(2)
-//     }
+
 signIn.addEventListener('click',()=>{
     for(let i = 0; i < forma.children.length;i++){
         if(forma[i].classList.contains('signIn')){

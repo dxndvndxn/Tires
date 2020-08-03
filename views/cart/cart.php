@@ -55,12 +55,13 @@
 </div>
 
 <?php include_once('views/layouts/footer.php') ?>
+<script src="template/js/_vars.js"></script>
 <script src="template/js/scroll.js"></script>
-<script src="template/js/forma.js"></script>
 <?php if(User::isGest()): ?>
-<script src="template/js/cart.js"></script>
+    <script src="template/js/cart.js"></script>
+    <script src="template/js/forma.js"></script>
 <?php else: ?>
-<script src="template/js/cabinet.js"></script>
+    <script src="template/js/cabinet.js"></script>
 <?php endif; ?>
 </body>
 </html>

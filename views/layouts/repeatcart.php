@@ -1,5 +1,5 @@
 <div class="cart">
-    <form action="#" method="post">
+    <form action="#" method="post" id="cartForm">
         <div class="cards">
             <?php if (isset($_SESSION['tires']) && isset($tires)):?>
                 <?php foreach ($tires as $id => $value):?>
@@ -10,8 +10,9 @@
                                 <span class="useOrnot">б/у</span>
                                 <span class="width"><?php echo $value['tire_width'];?></span><span class="height">/S<?php echo $value['height'];?></span>
                                 <span class="diametr"><?php echo $value['tire_diametr'];?></span>
+                                <input type="text" name="TireId[]" value="<?php echo $value['tire_id'] ?>">
                             </div>
-                            <div class="amount">X<input type="number" value="<?php echo $_SESSION['tires'][$value['tire_id']] * 4?>" data-am="1" disabled>
+                            <div class="amount">X<input type="number" name="TiresAmount[]" value="<?php echo $_SESSION['tires'][$value['tire_id']] * 4?>" data-am="1" disabled>
                                 <div class="minus"><span class="remove"></span></div>
                                 <div class="plus"><span class="add"></span><span class="add"></span></div>
                             </div>
@@ -30,8 +31,9 @@
                                 <span class="width"><?php echo $value['bolt_amount'];?></span>x<span class="diametr"><?php echo $value['pcd'];?></span>
                                 <span class="diametr"><?php echo $value['takeoff'];?></span>
                                 <span class="diametr"><?php echo $value['dia'];?></span>
+                                <input type="text" name="DiskId[]" value="<?php echo $value['disk_id'] ?>">
                             </div>
-                            <div class="amount">X<input type="number" value="<?php echo $_SESSION['disks'][$value['disk_id']] * 4?>" data-am="1" disabled>
+                            <div class="amount">X<input type="number" name="DisksAmount[]" name="Disk<?php echo $value['disk_id'] ?>" value="<?php echo $_SESSION['disks'][$value['disk_id']] * 4?>" data-am="1" disabled>
                                 <div class="minus"><span class="remove"></span></div>
                                 <div class="plus"><span></span><span class="add"></span></div>
                             </div>
@@ -49,21 +51,21 @@
             <?php endif; ?>
         </div>
         <div class="wrap-btn">
-            <span class="total">Итого: <input type="number" value="<?php echo $commonTotal * 4?>" data-totall="<?php echo $commonTotal *4?>" disabled class="total-inp">&#8381;</span>
+            <span class="total">Итого: <input type="number" name="totalPrice" value="<?php echo $commonTotal * 4?>" data-totall="<?php echo $commonTotal *4?>" disabled class="total-inp">&#8381;</span>
         </div>
         <?php if ((isset($_SESSION['tires']) && isset($tires)) || ((isset($_SESSION['disks']) && isset($disks)))): ?>
 
         <div class="form-fill">
             <div class="delivery-fill">
                 <div class="radios">
-                    <input type="radio" id="dispatch" name="delivery" value="dispatch">
+                    <input type="radio" id="dispatch" name="delivery">
                     <label for="dispatch">Доставка</label>
                     <label for="pickup">Самовывоз</label>
-                    <input type="radio" id="pickup" name="delivery" value="pickup">
+                    <input type="radio" id="pickup" name="delivery" value="Самовывоз">
                 </div>
                 <p>Доставка осуществляется в течение 5 дней*</p>
             </div>
-            <input type="text" placeholder="Введите адрес">
+            <input type="text" id="adress" placeholder="Введите адрес">
             <div class="payment-fill">
                 <div class="radios">
                     <input type="radio" id="cash" name="pay" value="cash">
@@ -76,7 +78,7 @@
                 <input type="text" name="CustomerName" placeholder="Имя" value="<?php if(isset($userInfo['name'])):?><?php echo $userInfo['name']?><?php endif;?>">
                 <input type="tel" name="CustomerTel" placeholder="Телефон" value="<?php if(isset($userInfo['tel'])):?><?php echo $userInfo['tel']?><?php endif;?>">
                 <input type="email" name="CustomerEmail" placeholder="E-mail" value="<?php if(isset($userInfo['email'])):?><?php echo $userInfo['email']?><?php endif;?>">
-                <input type="submit" value="Перейти к оплате">
+                <input type="submit" id="submitCart" name="getOrder" value="Перейти к оплате">
             </div>
         </div>
         <?php endif; ?>

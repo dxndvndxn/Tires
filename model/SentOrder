@@ -1,0 +1,51 @@
+<?php
+namespace\Register::justCheckEmail();
+
+class SentOrder
+{
+    public static function Checkout(){
+
+        if (isset($_POST['getOrder'])){
+            $db = Db::getCon();
+//            $diskId = $_POST['DiskId'];
+            $totalPrice = $_POST['totalPrice'];
+            $customerName = htmlentities(trim($_POST['CustomerName']));
+            $delivery = htmlentities(trim($_POST['delivery']));
+            $pay = $_POST['pay'];
+
+            if (isset($_POST['CustomerTel'])){
+
+                $tel = htmlentities(trim($_POST['CustomerTel']));
+
+            }
+            if (isset($_POST['CustomerEmail']) && Register::justCheckEmail($_POST['CustomerEmail'])){
+
+                $email = htmlentities(trim($_POST['CustomerEmail']));
+
+            }
+
+            if (isset($_POST['TireId'])){
+                $tireId = $_POST['TireId'][0];
+                $tiresAmount = $_POST['TiresAmount'][0];
+                $sql = 'INSERT INTO orders (order_customer, order_tel, order_mail, order_amount_of_product, order_product_tire_id, order_product_disk_id) VALUES (:customerName, :tel, :email, :tiresAmount, :tireId, null);';
+
+                $result = $db->prepare($sql);
+                $result->bindParam(':customerName',$customerName, PDO::PARAM_STR);
+                $result->bindParam(':tel',$tel, PDO::PARAM_STR);
+                $result->bindParam(':email',$email, PDO::PARAM_STR);
+                $result->bindParam(':tiresAmount',$tiresAmount, PDO::PARAM_STR);
+                $result->bindParam(':tireId',$tireId, PDO::PARAM_STR);
+                if ($result->execute()){
+                     echo 'Yes';
+                }else{
+                     echo 'No';
+                }
+            }
+
+        }
+
+
+
+
+    }
+}

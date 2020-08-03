@@ -2,7 +2,8 @@ $(document).ready(function () {
     $('.buy').click(function () {
         let buy = $(this).attr('data-id');
         $(this).attr("disabled",'');
-        $(this).html('В корзине!')
+        $(this).next().attr("disabled",'');
+        $(this).html('В корзине!');
         if($(this).hasClass('buy tire')){
             $.ajax({
                 beforeSend: function (xhr) {

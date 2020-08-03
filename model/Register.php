@@ -42,7 +42,7 @@ class Register{
 
     }
     //Проверяем емаил на валидность
-    static function justCheckEmail($email){
+    public static function justCheckEmail($email = NULL){
         if(filter_var($email,FILTER_VALIDATE_EMAIL)){
             return true;
         }else{

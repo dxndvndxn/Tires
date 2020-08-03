@@ -142,12 +142,25 @@ let wrapBtn = document.querySelector('.wrap-btn');
 (cards.children.length < 2) ? wrapBtn.style.marginTop = '51px' : wrapBtn.style.marginTop = '0px';
 
 let radios = document.querySelectorAll('.radios input');
-
+let adress = document.getElementById('adress');
+let submitCart = document.getElementById('submitCart');
 radios.forEach((el,i) =>{
 
     el.addEventListener('change',() =>{
 
         el.style.backgroundColor = '#000';
+
+        if (el === radios[0]){
+            adress.value.length === 0 || adress.value === 'Кантемировская 39В' ? adress.value = '' : console.log('Hi Mark');
+        }else if (el === radios[1]){
+            adress.value = 'Кантемировская 39В';
+        }else if (el === radios[2]){
+            submitCart.value = 'Оформить заказ';
+            submitCart.style.padding = '15px 31.3px';
+        }else if (el === radios[3]){
+            submitCart.value = 'Перейти к оплате';
+            submitCart.style.padding = '15px 25px';
+        }
 
         for (let radio of radios){
 
@@ -159,3 +172,26 @@ radios.forEach((el,i) =>{
 
     });
 });
+
+
+
+let amountOfArticle = document.querySelectorAll('.amount input');
+
+submitCart.addEventListener('click', (e) => {
+
+    this.onsubmit = function () {
+
+        total.removeAttribute('disabled');
+
+        for ( let inp of amountOfArticle ){
+
+            inp.removeAttribute('disabled');
+
+        }
+    };
+});
+
+adress.oninput = ()=>{
+    radios[0].value = adress.value;
+};
+
